@@ -1,0 +1,1687 @@
+; LISTING GENERATED: 12/13/2017 15:40:41 by MLDL Manager version 1.70.0 by MLDL Manager version 
+; OPEN FILE: E:\Documents\41Development\EQNLIB2\EQNLIB2.ROM
+
+                                  .JDA                                    ; SDK41 MODE, Jacobs/De Arras/SDK41 Mnemonics
+                                  .MCODE
+
+ A000 00D        [_XROM]          XROM        13                          ; XROM number %013
+
+ A001 00A        [_FCNS]          FCNS        10                          ; # FAT Entries  %010
+
+ A002 0000A0     [_XR_013.00]     DEFR4K      [-EQN_LIB]  A0A0            ; MCode XROM 13.00  "-EQN_LIB"
+ A004 2000BE     [_XR_013.01]     U4KDEF      [EQNLIB]    A0BE            ; UCode XROM 13.01  "EQNLIB"
+ A006 2000CD     [_XR_013.02]     U4KDEF      [EQN$]      A0CD            ; UCode XROM 13.02  "EQN$"
+ A008 202016     [_XR_013.03]     U4KDEF      [ESLV]      A216            ; UCode XROM 13.03  "ESLV"
+ A00A 202080     [_XR_013.04]     U4KDEF      [SAR]       A280            ; UCode XROM 13.04  "SAR"
+ A00C 202091     [_XR_013.05]     U4KDEF      [SAR$]      A291            ; UCode XROM 13.05  "SAR$"
+ A00E 2020EA     [_XR_013.06]     U4KDEF      [APPEQN]    A2EA            ; UCode XROM 13.06  "APPEQN"
+ A010 2020F9     [_XR_013.07]     U4KDEF      [APP$]      A2F9            ; UCode XROM 13.07  "APP$"
+ A012 20305D     [_XR_013.08]     U4KDEF      [INIEQN]    A35D            ; UCode XROM 13.08  "INIEQN"
+ A014 008000     [_XR_013.09]     DEFR4K      [Z=T?]      A800            ; MCode XROM 13.09  "Z=T?"
+ A016 000        [_FATEND]        #000                                    ; End of FAT
+ A017 000        [_FATEND]        #000                    
+
+                                  .BSS        128                         ; 128 consecutive NOPs from $A018 to $A097
+
+                                  .NAME       "-EQN_LIB"                  ; 02D 005 011 00E 01F 00C 009 082  
+*A098 082                         #082                                    ; "B"
+*A099 009                         #009                                    ; "I"
+*A09A 00C                         #00C                                    ; "L"
+*A09B 01F                         #01F                                    ; "_"
+*A09C 00E                         #00E                                    ; "N"
+*A09D 011                         #011                                    ; "Q"
+*A09E 005                         #005                                    ; "E"
+*A09F 02D                         #02D                                    ; "-"
+ A0A0 3E0        [-EQN_LIB]       RTN                     
+                                  .BSS        27                          ; 27 consecutive NOPs from $A0A1 to $A0BB
+
+*                                 .UCODE
+
+ A0BC 02F                         #02F                                    ; UserCode: 331 bytes (47 regs + 2 bytes) NONPRIVATE
+ A0BD 220                         #220                    
+ A0BE 1C2        [EQNLIB]         #1C2        ; 001  *LBL  "EQNLIB"       ; 00 45 51 4E 4C 49 42 , previous LBL @A0B6 [-008 bytes]
+ A0BF 001                         #001        
+ A0C0 0F7                         #0F7        
+ A0C1 000                         #000        
+ A0C2 045                         #045        
+ A0C3 051                         #051        
+ A0C4 04E                         #04E        
+ A0C5 04C                         #04C        
+ A0C6 049                         #049        
+ A0C7 042                         #042        
+ A0C8 1F4                         #1F4        ; 002   "EQNS"              ; 45 51 4E 53 
+ A0C9 045                         #045        
+ A0CA 051                         #051        
+ A0CB 04E                         #04E        
+ A0CC 053                         #053        
+ A0CD 1C2        [EQN$]           #1C2        ; 003  *LBL  "EQN$"         ; 00 45 51 4E 24 , previous LBL @A0BE [-015 bytes]
+ A0CE 002                         #002        
+ A0CF 0F5                         #0F5        
+ A0D0 000                         #000        
+ A0D1 045                         #045        
+ A0D2 051                         #051        
+ A0D3 04E                         #04E        
+ A0D4 024                         #024        
+ A0D5 110                         #110        ; 004   0
+ A0D6 138                         #138        ; 005   STO  08
+ A0D7 1A6                         #1A6        ; 006   XROM SEEKPTA        ; XROM 25,43 Extended Functions ROM
+ A0D8 06B                         #06B        
+ A0D9 1A6                         #1A6        ; 007   XROM GETREC         ; XROM 25,20 Extended Functions ROM
+ A0DA 054                         #054        
+ A0DB 17E                         #17E        ; 008   AVIEW
+ A0DC 185                         #185        ; 009   RTN
+ A0DD 1CF                         #1CF        ; 010  *LBL  F (107)
+ A0DE 06B                         #06B        
+ A0DF 128                         #128        ; 011   RCL  08
+ A0E0 114                         #114        ; 012   4
+ A0E1 140                         #140        ; 013   +
+ A0E2 1A8                         #1A8        ; 014   SF   25
+ A0E3 019                         #019        
+ A0E4 1A6                         #1A6        ; 015   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A0E5 06A                         #06A        
+ A0E6 1AB                         #1AB        ; 016   FC?C 25
+ A0E7 019                         #019        
+ A0E8 1B1                         #1B1        ; 017   GTO  00             ; LBL 00 @A0ED [+003 bytes]
+ A0E9 083                         #083        
+ A0EA 138                         #138        ; 018   STO  08
+ A0EB 1A6                         #1A6        ; 019   XROM GETREC         ; XROM 25,20 Extended Functions ROM
+ A0EC 054                         #054        
+ A0ED 101                         #101        ; 020  *LBL  00
+ A0EE 17E                         #17E        ; 021   AVIEW
+ A0EF 185                         #185        ; 022   RTN
+ A0F0 1CF                         #1CF        ; 023  *LBL  G (108)
+ A0F1 06C                         #06C        
+ A0F2 128                         #128        ; 024   RCL  08
+ A0F3 114                         #114        ; 025   4
+ A0F4 141                         #141        ; 026   -
+ A0F5 166                         #166        ; 027   X<0?
+ A0F6 1B1                         #1B1        ; 028   GTO  00             ; LBL 00 @A0FD [+005 bytes]
+ A0F7 085                         #085        
+ A0F8 138                         #138        ; 029   STO  08
+ A0F9 1A6                         #1A6        ; 030   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A0FA 06A                         #06A        
+ A0FB 1A6                         #1A6        ; 031   XROM GETREC         ; XROM 25,20 Extended Functions ROM
+ A0FC 054                         #054        
+ A0FD 101                         #101        ; 032  *LBL  00
+ A0FE 17E                         #17E        ; 033   AVIEW
+ A0FF 185                         #185        ; 034   RTN
+ A100 1CF                         #1CF        ; 035  *LBL  H (109)
+ A101 06D                         #06D        
+ A102 128                         #128        ; 036   RCL  08
+ A103 114                         #114        ; 037   4
+ A104 14B                         #14B        ; 038   MOD
+ A105 167                         #167        ; 039   X=0?
+ A106 1B1                         #1B1        ; 040   GTO  00             ; LBL 00 @A10D [+005 bytes]
+ A107 085                         #085        
+ A108 111                         #111        ; 041   1
+ A109 193                         #193        ; 042   ST-  08
+ A10A 008                         #008        
+ A10B 1B2                         #1B2        ; 043   GTO  01             ; LBL 01 @A111 [+004 bytes]
+ A10C 084                         #084        
+ A10D 101                         #101        ; 044  *LBL  00
+ A10E 111                         #111        ; 045   1
+ A10F 192                         #192        ; 046   ST+  08
+ A110 008                         #008        
+ A111 102                         #102        ; 047  *LBL  01
+ A112 128                         #128        ; 048   RCL  08
+ A113 1A6                         #1A6        ; 049   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A114 06A                         #06A        
+ A115 1A6                         #1A6        ; 050   XROM GETREC         ; XROM 25,20 Extended Functions ROM
+ A116 054                         #054        
+ A117 17E                         #17E        ; 051   AVIEW
+ A118 185                         #185        ; 052   RTN
+ A119 1CF                         #1CF        ; 053  *LBL  I (110)
+ A11A 06E                         #06E        
+ A11B 17E                         #17E        ; 054   AVIEW
+ A11C 185                         #185        ; 055   RTN
+ A11D 1CF                         #1CF        ; 056  *LBL  J (111)
+ A11E 06F                         #06F        
+ A11F 128                         #128        ; 057   RCL  08
+ A120 128                         #128        ; 058   RCL  08
+ A121 114                         #114        ; 059   4
+ A122 14B                         #14B        ; 060   MOD
+ A123 141                         #141        ; 061   -
+ A124 138                         #138        ; 062   STO  08
+ A125 113                         #113        ; 063   3
+ A126 140                         #140        ; 064   +
+ A127 1A6                         #1A6        ; 065   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A128 06A                         #06A        
+ A129 1A6                         #1A6        ; 066   XROM GETREC         ; XROM 25,20 Extended Functions ROM
+ A12A 054                         #054        
+ A12B 17E                         #17E        ; 067   AVIEW
+ A12C 185                         #185        ; 068   RTN
+ A12D 1CF                         #1CF        ; 069  *LBL  A (102)
+ A12E 066                         #066        
+ A12F 1AB                         #1AB        ; 070   FC?C 22
+ A130 016                         #016        
+ A131 1B1                         #1B1        ; 071   GTO  00             ; LBL 00 @A13E [+011 bytes]
+ A132 08B                         #08B        
+ A133 11E                         #11E        ; 072   XEQ  "LET="         ; 4C 45 54 3D 
+ A134 0F4                         #0F4        
+ A135 04C                         #04C        
+ A136 045                         #045        
+ A137 054                         #054        
+ A138 03D                         #03D        
+ A139 111                         #111        ; 073   1
+ A13A 131                         #131        ; 074   STO  01
+ A13B 1D0                         #1D0        ; 075   GTO  J (111)        ; LBL J (111) @A11D [-031 bytes]
+ A13C 01F                         #01F        
+ A13D 06F                         #06F        
+ A13E 101                         #101        ; 076  *LBL  00
+ A13F 111                         #111        ; 077   1
+ A140 1E0                         #1E0        ; 078   XEQ  10             ; LBL 10 @A1DB [+154 bytes]
+ A141 09A                         #09A        
+ A142 08A                         #08A        
+ A143 1A7                         #1A7        ; 079   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A144 088                         #088        
+ A145 111                         #111        ; 080   1
+ A146 131                         #131        ; 081   STO  01
+ A147 185                         #185        ; 082   RTN
+ A148 1CF                         #1CF        ; 083  *LBL  B (103)
+ A149 067                         #067        
+ A14A 1AB                         #1AB        ; 084   FC?C 22
+ A14B 016                         #016        
+ A14C 1B1                         #1B1        ; 085   GTO  00             ; LBL 00 @A155 [+007 bytes]
+ A14D 087                         #087        
+ A14E 1A7                         #1A7        ; 086   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A14F 088                         #088        
+ A150 112                         #112        ; 087   2
+ A151 132                         #132        ; 088   STO  02
+ A152 1D0                         #1D0        ; 089   GTO  J (111)        ; LBL J (111) @A11D [-054 bytes]
+ A153 036                         #036        
+ A154 06F                         #06F        
+ A155 101                         #101        ; 090  *LBL  00
+ A156 112                         #112        ; 091   2
+ A157 1E0                         #1E0        ; 092   XEQ  10             ; LBL 10 @A1DB [+131 bytes]
+ A158 083                         #083        
+ A159 08A                         #08A        
+ A15A 1A7                         #1A7        ; 093   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A15B 088                         #088        
+ A15C 112                         #112        ; 094   2
+ A15D 132                         #132        ; 095   STO  02
+ A15E 185                         #185        ; 096   RTN
+ A15F 1CF                         #1CF        ; 097  *LBL  C (104)
+ A160 068                         #068        
+ A161 1AB                         #1AB        ; 098   FC?C 22
+ A162 016                         #016        
+ A163 1B1                         #1B1        ; 099   GTO  00             ; LBL 00 @A16C [+007 bytes]
+ A164 087                         #087        
+ A165 1A7                         #1A7        ; 100   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A166 088                         #088        
+ A167 113                         #113        ; 101   3
+ A168 133                         #133        ; 102   STO  03
+ A169 1D0                         #1D0        ; 103   GTO  J (111)        ; LBL J (111) @A11D [-077 bytes]
+ A16A 04D                         #04D        
+ A16B 06F                         #06F        
+ A16C 101                         #101        ; 104  *LBL  00
+ A16D 113                         #113        ; 105   3
+ A16E 1E0                         #1E0        ; 106   XEQ  10             ; LBL 10 @A1DB [+108 bytes]
+ A16F 06C                         #06C        
+ A170 08A                         #08A        
+ A171 1A7                         #1A7        ; 107   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A172 088                         #088        
+ A173 113                         #113        ; 108   3
+ A174 133                         #133        ; 109   STO  03
+ A175 185                         #185        ; 110   RTN
+ A176 1CF                         #1CF        ; 111  *LBL  D (105)
+ A177 069                         #069        
+ A178 1AB                         #1AB        ; 112   FC?C 22
+ A179 016                         #016        
+ A17A 1B1                         #1B1        ; 113   GTO  00             ; LBL 00 @A183 [+007 bytes]
+ A17B 087                         #087        
+ A17C 1A7                         #1A7        ; 114   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A17D 088                         #088        
+ A17E 114                         #114        ; 115   4
+ A17F 134                         #134        ; 116   STO  04
+ A180 1D0                         #1D0        ; 117   GTO  J (111)        ; LBL J (111) @A11D [-100 bytes]
+ A181 064                         #064        
+ A182 06F                         #06F        
+ A183 101                         #101        ; 118  *LBL  00
+ A184 114                         #114        ; 119   4
+ A185 1E0                         #1E0        ; 120   XEQ  10             ; LBL 10 @A1DB [+085 bytes]
+ A186 055                         #055        
+ A187 08A                         #08A        
+ A188 1A7                         #1A7        ; 121   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A189 088                         #088        
+ A18A 114                         #114        ; 122   4
+ A18B 134                         #134        ; 123   STO  04
+ A18C 185                         #185        ; 124   RTN
+ A18D 1CF                         #1CF        ; 125  *LBL  E (106)
+ A18E 06A                         #06A        
+ A18F 1AB                         #1AB        ; 126   FC?C 22
+ A190 016                         #016        
+ A191 1B1                         #1B1        ; 127   GTO  00             ; LBL 00 @A19A [+007 bytes]
+ A192 087                         #087        
+ A193 1A7                         #1A7        ; 128   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A194 088                         #088        
+ A195 115                         #115        ; 129   5
+ A196 135                         #135        ; 130   STO  05
+ A197 1D0                         #1D0        ; 131   GTO  J (111)        ; LBL J (111) @A11D [-123 bytes]
+ A198 07B                         #07B        
+ A199 06F                         #06F        
+ A19A 101                         #101        ; 132  *LBL  00
+ A19B 115                         #115        ; 133   5
+ A19C 1E0                         #1E0        ; 134   XEQ  10             ; LBL 10 @A1DB [+062 bytes]
+ A19D 03E                         #03E        
+ A19E 08A                         #08A        
+ A19F 1A7                         #1A7        ; 135   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1A0 088                         #088        
+ A1A1 115                         #115        ; 136   5
+ A1A2 135                         #135        ; 137   STO  05
+ A1A3 185                         #185        ; 138   RTN
+ A1A4 1CF                         #1CF        ; 139  *LBL  a (11)
+ A1A5 07B                         #07B        
+ A1A6 111                         #111        ; 140   1
+ A1A7 1E0                         #1E0        ; 141   XEQ  12             ; LBL 12 @A1F6 [+078 bytes]
+ A1A8 04E                         #04E        
+ A1A9 08C                         #08C        
+ A1AA 1A7                         #1A7        ; 142   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1AB 088                         #088        
+ A1AC 111                         #111        ; 143   1
+ A1AD 131                         #131        ; 144   STO  01
+ A1AE 185                         #185        ; 145   RTN
+ A1AF 1CF                         #1CF        ; 146  *LBL  b (12)
+ A1B0 07C                         #07C        
+ A1B1 112                         #112        ; 147   2
+ A1B2 1E0                         #1E0        ; 148   XEQ  12             ; LBL 12 @A1F6 [+067 bytes]
+ A1B3 043                         #043        
+ A1B4 08C                         #08C        
+ A1B5 1A7                         #1A7        ; 149   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1B6 088                         #088        
+ A1B7 112                         #112        ; 150   2
+ A1B8 132                         #132        ; 151   STO  02
+ A1B9 185                         #185        ; 152   RTN
+ A1BA 1CF                         #1CF        ; 153  *LBL  c (13)
+ A1BB 07D                         #07D        
+ A1BC 113                         #113        ; 154   3
+ A1BD 1E0                         #1E0        ; 155   XEQ  12             ; LBL 12 @A1F6 [+056 bytes]
+ A1BE 038                         #038        
+ A1BF 08C                         #08C        
+ A1C0 1A7                         #1A7        ; 156   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1C1 088                         #088        
+ A1C2 113                         #113        ; 157   3
+ A1C3 133                         #133        ; 158   STO  03
+ A1C4 185                         #185        ; 159   RTN
+ A1C5 1CF                         #1CF        ; 160  *LBL  d (14)
+ A1C6 07E                         #07E        
+ A1C7 114                         #114        ; 161   4
+ A1C8 1E0                         #1E0        ; 162   XEQ  12             ; LBL 12 @A1F6 [+045 bytes]
+ A1C9 02D                         #02D        
+ A1CA 08C                         #08C        
+ A1CB 1A7                         #1A7        ; 163   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1CC 088                         #088        
+ A1CD 114                         #114        ; 164   4
+ A1CE 134                         #134        ; 165   STO  04
+ A1CF 185                         #185        ; 166   RTN
+ A1D0 1CF                         #1CF        ; 167  *LBL  e (15)
+ A1D1 07F                         #07F        
+ A1D2 115                         #115        ; 168   5
+ A1D3 1E0                         #1E0        ; 169   XEQ  12             ; LBL 12 @A1F6 [+034 bytes]
+ A1D4 022                         #022        
+ A1D5 08C                         #08C        
+ A1D6 1A7                         #1A7        ; 170   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A1D7 088                         #088        
+ A1D8 115                         #115        ; 171   5
+ A1D9 135                         #135        ; 172   STO  05
+ A1DA 185                         #185        ; 173   RTN
+ A1DB 10B                         #10B        ; 174  *LBL  10
+ A1DC 111                         #111        ; 175   1 E-99
+ A1DD 01B                         #01B        
+ A1DE 01C                         #01C        
+ A1DF 019                         #019        
+ A1E0 019                         #019        
+ A1E1 137                         #137        ; 176   STO  07
+ A1E2 111                         #111        ; 177   1
+ A1E3 136                         #136        ; 178   STO  06
+ A1E4 175                         #175        ; 179   RDN
+ A1E5 175                         #175        ; 180   RDN
+ A1E6 10C                         #10C        ; 181  *LBL  11
+ A1E7 139                         #139        ; 182   STO  09
+ A1E8 128                         #128        ; 183   RCL  08
+ A1E9 112                         #112        ; 184   2
+ A1EA 140                         #140        ; 185   +
+ A1EB 1A6                         #1A6        ; 186   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A1EC 06A                         #06A        
+ A1ED 127                         #127        ; 187   RCL  07
+ A1EE 126                         #126        ; 188   RCL  06
+ A1EF 11E                         #11E        ; 189   XEQ  "ESLV"         ; 45 53 4C 56 
+ A1F0 0F4                         #0F4        
+ A1F1 045                         #045        
+ A1F2 053                         #053        
+ A1F3 04C                         #04C        
+ A1F4 056                         #056        
+ A1F5 185                         #185        ; 190   RTN
+ A1F6 10D                         #10D        ; 191  *LBL  12
+ A1F7 175                         #175        ; 192   RDN
+ A1F8 136                         #136        ; 193   STO  06
+ A1F9 175                         #175        ; 194   RDN
+ A1FA 137                         #137        ; 195   STO  07
+ A1FB 175                         #175        ; 196   RDN
+ A1FC 175                         #175        ; 197   RDN
+ A1FD 1BC                         #1BC        ; 198   GTO  11             ; LBL 11 @A1E6 [-025 bytes]
+ A1FE 019                         #019        
+ A1FF 1CA                         #1CA        ; 199   END                 ; Program END, previous LBL @A0CD [-306 bytes]
+ A200 02B                         #02B        
+ A201 22F                         #22F        
+
+                                  .MCODE
+                                  .BSS        18                          ; 18 consecutive NOPs from $A202 to $A213
+
+*                                 .UCODE
+
+ A214 00D                         #00D                                    ; UserCode: 93 bytes (13 regs + 2 bytes) NONPRIVATE
+ A215 220                         #220                    
+ A216 1C2        [ESLV]           #1C2        ; 001  *LBL  "ESLV"         ; 00 45 53 4C 56 , previous LBL @A20E [-008 bytes]
+ A217 001                         #001        
+ A218 0F5                         #0F5        
+ A219 000                         #000        
+ A21A 045                         #045        
+ A21B 053                         #053        
+ A21C 04C                         #04C        
+ A21D 056                         #056        
+ A21E 101                         #101        ; 002  *LBL  00
+ A21F 1AE                         #1AE        ; 003   XEQ  IND 09
+ A220 089                         #089        
+ A221 1A8                         #1A8        ; 004   SF   09
+ A222 009                         #009        
+ A223 1A4                         #1A4        ; 005   XROM 19,04          ; no XROM name found
+ A224 0C4                         #0C4        
+ A225 171                         #171        ; 006   X<>Y
+ A226 1AE                         #1AE        ; 007   XEQ  IND 09
+ A227 089                         #089        
+ A228 1A4                         #1A4        ; 008   XROM 19,05          ; no XROM name found
+ A229 0C5                         #0C5        
+ A22A 11E                         #11E        ; 009   XEQ  "Z=T?"         ; 5A 3D 54 3F 
+ A22B 0F4                         #0F4        
+ A22C 05A                         #05A        
+ A22D 03D                         #03D        
+ A22E 054                         #054        
+ A22F 03F                         #03F        
+ A230 1B7                         #1B7        ; 010   GTO  06             ; LBL 06 @A24D [+027 bytes]
+ A231 09B                         #09B        
+ A232 1FF                         #1FF        ; 011   "Y-Z*(Y-X)/(Z-T)"   ; 59 2D 5A 2A 28 59 2D 58 29 2F 28 5A 2D 54 29 
+ A233 059                         #059        
+ A234 02D                         #02D        
+ A235 05A                         #05A        
+ A236 02A                         #02A        
+ A237 028                         #028        
+ A238 059                         #059        
+ A239 02D                         #02D        
+ A23A 058                         #058        
+ A23B 029                         #029        
+ A23C 02F                         #02F        
+ A23D 028                         #028        
+ A23E 05A                         #05A        
+ A23F 02D                         #02D        
+ A240 054                         #054        
+ A241 029                         #029        
+ A242 1A9                         #1A9        ; 012   CF   09
+ A243 009                         #009        
+ A244 1A4                         #1A4        ; 013   XROM 19,02          ; no XROM name found
+ A245 0C2                         #0C2        
+ A246 1AC                         #1AC        ; 014   FS?  10
+ A247 00A                         #00A        
+ A248 198                         #198        ; 015   VIEW X (3)
+ A249 073                         #073        
+ A24A 179                         #179        ; 016   X#Y?
+ A24B 1B1                         #1B1        ; 017   GTO  00             ; LBL 00 @A21E [-047 bytes]
+ A24C 02F                         #02F        
+ A24D 107                         #107        ; 018  *LBL  06
+ A24E 1AE                         #1AE        ; 019   GTO  IND 09
+ A24F 009                         #009        
+ A250 102                         #102        ; 020  *LBL  01
+ A251 1A7                         #1A7        ; 021   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A252 088                         #088        
+ A253 111                         #111        ; 022   1
+ A254 185                         #185        ; 023   RTN
+ A255 103                         #103        ; 024  *LBL  02
+ A256 1A7                         #1A7        ; 025   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A257 088                         #088        
+ A258 112                         #112        ; 026   2
+ A259 185                         #185        ; 027   RTN
+ A25A 104                         #104        ; 028  *LBL  03
+ A25B 1A7                         #1A7        ; 029   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A25C 088                         #088        
+ A25D 113                         #113        ; 030   3
+ A25E 185                         #185        ; 031   RTN
+ A25F 105                         #105        ; 032  *LBL  04
+ A260 1A7                         #1A7        ; 033   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A261 088                         #088        
+ A262 114                         #114        ; 034   4
+ A263 185                         #185        ; 035   RTN
+ A264 106                         #106        ; 036  *LBL  05
+ A265 1A7                         #1A7        ; 037   XROM LET=           ; XROM 30,08 -FORM EVAL+
+ A266 088                         #088        
+ A267 115                         #115        ; 038   5
+ A268 185                         #185        ; 039   RTN
+ A269 1CC                         #1CC        ; 040   END                 ; Program END, previous LBL @A216 [-083 bytes]
+ A26A 00B                         #00B        
+ A26B 22F                         #22F        
+
+                                  .MCODE
+                                  .BSS        18                          ; 18 consecutive NOPs from $A26C to $A27D
+
+*                                 .UCODE
+
+ A27E 00D                         #00D                                    ; UserCode: 94 bytes (13 regs + 3 bytes) NONPRIVATE
+ A27F 230                         #230                    
+ A280 1C0        [SAR]            #1C0        ; 001  *LBL  "SAR"          ; 00 53 41 52 , previous LBL @A279 [-007 bytes]
+ A281 001                         #001        
+ A282 0F4                         #0F4        
+ A283 000                         #000        
+ A284 053                         #053        
+ A285 041                         #041        
+ A286 052                         #052        
+ A287 1F6                         #1F6        ; 002   "FNAME?"            ; 46 4E 41 4D 45 3F 
+ A288 046                         #046        
+ A289 04E                         #04E        
+ A28A 041                         #041        
+ A28B 04D                         #04D        
+ A28C 045                         #045        
+ A28D 03F                         #03F        
+ A28E 18C                         #18C        ; 003   AON
+ A28F 1A1                         #1A1        ; 004   XROM PMTA           ; XROM 05,21 -AMC"OS/X
+ A290 055                         #055        
+ A291 1C6        [SAR$]           #1C6        ; 005  *LBL  "SAR$"         ; 00 53 41 52 24 , previous LBL @A280 [-017 bytes]
+ A292 002                         #002        
+ A293 0F5                         #0F5        
+ A294 000                         #000        
+ A295 053                         #053        
+ A296 041                         #041        
+ A297 052                         #052        
+ A298 024                         #024        
+ A299 19A                         #19A        ; 006   ASTO 02
+ A29A 002                         #002        
+ A29B 110                         #110        ; 007   0.0
+ A29C 01A                         #01A        
+ A29D 010                         #010        
+ A29E 1A6                         #1A6        ; 008   XROM SEEKPTA        ; XROM 25,43 Extended Functions ROM
+ A29F 06B                         #06B        
+ A2A0 1F7                         #1F7        ; 009   "SEARCH?"           ; 53 45 41 52 43 48 3F 
+ A2A1 053                         #053        
+ A2A2 045                         #045        
+ A2A3 041                         #041        
+ A2A4 052                         #052        
+ A2A5 043                         #043        
+ A2A6 048                         #048        
+ A2A7 03F                         #03F        
+ A2A8 18C                         #18C        ; 010   AON
+ A2A9 1A1                         #1A1        ; 011   XROM PMTA           ; XROM 05,21 -AMC"OS/X
+ A2AA 055                         #055        
+ A2AB 19A                         #19A        ; 012   ASTO 00
+ A2AC 000                         #000        
+ A2AD 1F6                         #1F6        ; 013   "RPLCE?"            ; 52 50 4C 43 45 3F 
+ A2AE 052                         #052        
+ A2AF 050                         #050        
+ A2B0 04C                         #04C        
+ A2B1 043                         #043        
+ A2B2 045                         #045        
+ A2B3 03F                         #03F        
+ A2B4 18C                         #18C        ; 014   AON
+ A2B5 1A1                         #1A1        ; 015   XROM PMTA           ; XROM 05,21 -AMC"OS/X
+ A2B6 055                         #055        
+ A2B7 18B                         #18B        ; 016   AOFF
+ A2B8 19A                         #19A        ; 017   ASTO 01
+ A2B9 001                         #001        
+ A2BA 101                         #101        ; 018  *LBL  00
+ A2BB 187                         #187        ; 019   CLA
+ A2BC 19B                         #19B        ; 020   ARCL 00
+ A2BD 000                         #000        
+ A2BE 1A6                         #1A6        ; 021   XROM POSFL          ; XROM 25,29 Extended Functions ROM
+ A2BF 05D                         #05D        
+ A2C0 166                         #166        ; 022   X<0?
+ A2C1 1B2                         #1B2        ; 023   GTO  01             ; LBL 01 @A2CF [+012 bytes]
+ A2C2 08C                         #08C        
+ A2C3 1A6                         #1A6        ; 024   XROM ALENG          ; XROM 25,01 XFUN: Returns numbers of chars in ALPHA
+ A2C4 041                         #041        
+ A2C5 1A6                         #1A6        ; 025   XROM DELCHR         ; XROM 25,12 Extended Functions ROM
+ A2C6 04C                         #04C        
+ A2C7 187                         #187        ; 026   CLA
+ A2C8 19B                         #19B        ; 027   ARCL 01
+ A2C9 001                         #001        
+ A2CA 1A6                         #1A6        ; 028   XROM INSCHR         ; XROM 25,24 Extended Functions ROM
+ A2CB 058                         #058        
+ A2CC 175                         #175        ; 029   RDN
+ A2CD 1B1                         #1B1        ; 030   GTO  00             ; LBL 00 @A2BA [-021 bytes]
+ A2CE 015                         #015        
+ A2CF 102                         #102        ; 031  *LBL  01
+ A2D0 187                         #187        ; 032   CLA
+ A2D1 19B                         #19B        ; 033   ARCL 02
+ A2D2 002                         #002        
+ A2D3 175                         #175        ; 034   RDN
+ A2D4 1C8                         #1C8        ; 035   END                 ; Program END, previous LBL @A291 [-067 bytes]
+ A2D5 009                         #009        
+ A2D6 22F                         #22F        
+
+                                  .MCODE
+                                  .BSS        17                          ; 17 consecutive NOPs from $A2D7 to $A2E7
+
+*                                 .UCODE
+
+ A2E8 00F                         #00F                                    ; UserCode: 106 bytes (15 regs + 1 bytes) NONPRIVATE
+ A2E9 210                         #210                    
+ A2EA 1C4        [APPEQN]         #1C4        ; 001  *LBL  "APPEQN"       ; 00 41 50 50 45 51 4E , previous LBL @A2E1 [-009 bytes]
+ A2EB 001                         #001        
+ A2EC 0F7                         #0F7        
+ A2ED 000                         #000        
+ A2EE 041                         #041        
+ A2EF 050                         #050        
+ A2F0 050                         #050        
+ A2F1 045                         #045        
+ A2F2 051                         #051        
+ A2F3 04E                         #04E        
+ A2F4 1F4                         #1F4        ; 002   "EQNS"              ; 45 51 4E 53 
+ A2F5 045                         #045        
+ A2F6 051                         #051        
+ A2F7 04E                         #04E        
+ A2F8 053                         #053        
+ A2F9 1C2        [APP$]           #1C2        ; 003  *LBL  "APP$"         ; 00 41 50 50 24 , previous LBL @A2EA [-015 bytes]
+ A2FA 002                         #002        
+ A2FB 0F5                         #0F5        
+ A2FC 000                         #000        
+ A2FD 041                         #041        
+ A2FE 050                         #050        
+ A2FF 050                         #050        
+ A300 024                         #024        
+ A301 110                         #110        ; 004   0
+ A302 1A6                         #1A6        ; 005   XROM SEEKPTA        ; XROM 25,43 Extended Functions ROM
+ A303 06B                         #06B        
+ A304 101                         #101        ; 006  *LBL  00
+ A305 111                         #111        ; 007   1
+ A306 140                         #140        ; 008   +
+ A307 1A8                         #1A8        ; 009   SF   25
+ A308 019                         #019        
+ A309 1A6                         #1A6        ; 010   XROM SEEKPT         ; XROM 25,42 Extended Functions ROM
+ A30A 06A                         #06A        
+ A30B 1AA                         #1AA        ; 011   FS?C 25
+ A30C 019                         #019        
+ A30D 1B1                         #1B1        ; 012   GTO  00             ; LBL 00 @A304 [-011 bytes]
+ A30E 00B                         #00B        
+ A30F 1A6                         #1A6        ; 013   XROM FLSIZE         ; XROM 25,15 Extended Functions ROM
+ A310 04F                         #04F        
+ A311 114                         #114        ; 014   4
+ A312 140                         #140        ; 015   +
+ A313 1A6                         #1A6        ; 016   XROM RESZFL         ; XROM 25,55 CX Extended Functions ROM
+ A314 077                         #077        
+ A315 1F8                         #1F8        ; 017   "EQN NAME"          ; 45 51 4E 20 4E 41 4D 45 
+ A316 045                         #045        
+ A317 051                         #051        
+ A318 04E                         #04E        
+ A319 020                         #020        
+ A31A 04E                         #04E        
+ A31B 041                         #041        
+ A31C 04D                         #04D        
+ A31D 045                         #045        
+ A31E 1A6                         #1A6        ; 018   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A31F 044                         #044        
+ A320 1FE                         #1FE        ; 019   "EQN EXPRESSION"    ; 45 51 4E 20 45 58 50 52 45 53 53 49 4F 4E 
+ A321 045                         #045        
+ A322 051                         #051        
+ A323 04E                         #04E        
+ A324 020                         #020        
+ A325 045                         #045        
+ A326 058                         #058        
+ A327 050                         #050        
+ A328 052                         #052        
+ A329 045                         #045        
+ A32A 053                         #053        
+ A32B 053                         #053        
+ A32C 049                         #049        
+ A32D 04F                         #04F        
+ A32E 04E                         #04E        
+ A32F 1A6                         #1A6        ; 020   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A330 044                         #044        
+ A331 1FB                         #1FB        ; 021   "EQN FORMULA"       ; 45 51 4E 20 46 4F 52 4D 55 4C 41 
+ A332 045                         #045        
+ A333 051                         #051        
+ A334 04E                         #04E        
+ A335 020                         #020        
+ A336 046                         #046        
+ A337 04F                         #04F        
+ A338 052                         #052        
+ A339 04D                         #04D        
+ A33A 055                         #055        
+ A33B 04C                         #04C        
+ A33C 041                         #041        
+ A33D 1A6                         #1A6        ; 022   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A33E 044                         #044        
+ A33F 1F8                         #1F8        ; 023   "EQN MENU"          ; 45 51 4E 20 4D 45 4E 55 
+ A340 045                         #045        
+ A341 051                         #051        
+ A342 04E                         #04E        
+ A343 020                         #020        
+ A344 04D                         #04D        
+ A345 045                         #045        
+ A346 04E                         #04E        
+ A347 055                         #055        
+ A348 1A6                         #1A6        ; 024   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A349 044                         #044        
+ A34A 1C8                         #1C8        ; 025   END                 ; Program END, previous LBL @A2F9 [-081 bytes]
+ A34B 00B                         #00B        
+ A34C 22F                         #22F        
+
+                                  .MCODE
+                                  .BSS        14                          ; 14 consecutive NOPs from $A34D to $A35A
+
+*                                 .UCODE
+
+ A35B 0BD                         #08D                                    ; UserCode: 988 bytes (141 regs + 1 bytes) NONPRIVATE
+ A35C 210                         #210                    
+ A35D 1C4        [INIEQN]         #1C4        ; 001  *LBL  "INIEQN"       ; 00 49 4E 49 45 51 4E , previous LBL @A354 [-009 bytes]
+ A35E 001                         #001        
+ A35F 0F7                         #0F7        
+ A360 000                         #000        
+ A361 049                         #049        
+ A362 04E                         #04E        
+ A363 049                         #049        
+ A364 045                         #045        
+ A365 051                         #051        
+ A366 04E                         #04E        
+ A367 1F4                         #1F4        ; 002   "EQNS"              ; 45 51 4E 53 
+ A368 045                         #045        
+ A369 051                         #051        
+ A36A 04E                         #04E        
+ A36B 053                         #053        
+ A36C 111                         #111        ; 003   128
+ A36D 012                         #012        
+ A36E 018                         #018        
+ A36F 1A6                         #1A6        ; 004   XROM CRFLAS         ; XROM 25,10 Extended Functions ROM
+ A370 04A                         #04A        
+ A371 1F6                         #1F6        ; 005   "LINEAR"            ; 4C 49 4E 45 41 52 
+ A372 04C                         #04C        
+ A373 049                         #049        
+ A374 04E                         #04E        
+ A375 045                         #045        
+ A376 041                         #041        
+ A377 052                         #052        
+ A378 1A6                         #1A6        ; 006   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A379 044                         #044        
+ A37A 1F6                         #1F6        ; 007   "Y=AX+B"            ; 59 3D 41 58 2B 42 
+ A37B 059                         #059        
+ A37C 03D                         #03D        
+ A37D 041                         #041        
+ A37E 058                         #058        
+ A37F 02B                         #02B        
+ A380 042                         #042        
+ A381 1A6                         #1A6        ; 008   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A382 044                         #044        
+ A383 1F7                         #1F7        ; 009   "c*a+d-b"           ; 63 2A 61 2B 64 2D 62 
+ A384 063                         #063        
+ A385 02A                         #02A        
+ A386 061                         #061        
+ A387 02B                         #02B        
+ A388 064                         #064        
+ A389 02D                         #02D        
+ A38A 062                         #062        
+ A38B 1A6                         #1A6        ; 010   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A38C 044                         #044        
+ A38D 1FA                         #1FA        ; 011   "X  Y  A  B"        ; 58 20 20 59 20 20 41 20 20 42 
+ A38E 058                         #058        
+ A38F 020                         #020        
+ A390 020                         #020        
+ A391 059                         #059        
+ A392 020                         #020        
+ A393 020                         #020        
+ A394 041                         #041        
+ A395 020                         #020        
+ A396 020                         #020        
+ A397 042                         #042        
+ A398 1A6                         #1A6        ; 012   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A399 044                         #044        
+ A39A 1F9                         #1F9        ; 013   "QUADRATIC"         ; 51 55 41 44 52 41 54 49 43 
+ A39B 051                         #051        
+ A39C 055                         #055        
+ A39D 041                         #041        
+ A39E 044                         #044        
+ A39F 052                         #052        
+ A3A0 041                         #041        
+ A3A1 054                         #054        
+ A3A2 049                         #049        
+ A3A3 043                         #043        
+ A3A4 1A6                         #1A6        ; 014   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3A5 044                         #044        
+ A3A6 1FB                         #1FB        ; 015   "Y=AX^2+BX+C"       ; 59 3D 41 58 5E 32 2B 42 58 2B 43 
+ A3A7 059                         #059        
+ A3A8 03D                         #03D        
+ A3A9 041                         #041        
+ A3AA 058                         #058        
+ A3AB 05E                         #05E        
+ A3AC 032                         #032        
+ A3AD 02B                         #02B        
+ A3AE 042                         #042        
+ A3AF 058                         #058        
+ A3B0 02B                         #02B        
+ A3B1 043                         #043        
+ A3B2 1A6                         #1A6        ; 016   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3B3 044                         #044        
+ A3B4 1FD                         #1FD        ; 017   "c*a^2+d*a+e-b"     ; 63 2A 61 5E 32 2B 64 2A 61 2B 65 2D 62 
+ A3B5 063                         #063        
+ A3B6 02A                         #02A        
+ A3B7 061                         #061        
+ A3B8 05E                         #05E        
+ A3B9 032                         #032        
+ A3BA 02B                         #02B        
+ A3BB 064                         #064        
+ A3BC 02A                         #02A        
+ A3BD 061                         #061        
+ A3BE 02B                         #02B        
+ A3BF 065                         #065        
+ A3C0 02D                         #02D        
+ A3C1 062                         #062        
+ A3C2 1A6                         #1A6        ; 018   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3C3 044                         #044        
+ A3C4 1FC                         #1FC        ; 019   "X  Y  A B  C"      ; 58 20 20 59 20 20 41 20 42 20 20 43 
+ A3C5 058                         #058        
+ A3C6 020                         #020        
+ A3C7 020                         #020        
+ A3C8 059                         #059        
+ A3C9 020                         #020        
+ A3CA 020                         #020        
+ A3CB 041                         #041        
+ A3CC 020                         #020        
+ A3CD 042                         #042        
+ A3CE 020                         #020        
+ A3CF 020                         #020        
+ A3D0 043                         #043        
+ A3D1 1A6                         #1A6        ; 020   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3D2 044                         #044        
+ A3D3 1F5                         #1F5        ; 021   "CUBIC"             ; 43 55 42 49 43 
+ A3D4 043                         #043        
+ A3D5 055                         #055        
+ A3D6 042                         #042        
+ A3D7 049                         #049        
+ A3D8 043                         #043        
+ A3D9 1A6                         #1A6        ; 022   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3DA 044                         #044        
+ A3DB 1FF                         #1FF        ; 023   "Y=X^3+AX^2+BX+C"   ; 59 3D 58 5E 33 2B 41 58 5E 32 2B 42 58 2B 43 
+ A3DC 059                         #059        
+ A3DD 03D                         #03D        
+ A3DE 058                         #058        
+ A3DF 05E                         #05E        
+ A3E0 033                         #033        
+ A3E1 02B                         #02B        
+ A3E2 041                         #041        
+ A3E3 058                         #058        
+ A3E4 05E                         #05E        
+ A3E5 032                         #032        
+ A3E6 02B                         #02B        
+ A3E7 042                         #042        
+ A3E8 058                         #058        
+ A3E9 02B                         #02B        
+ A3EA 043                         #043        
+ A3EB 1A6                         #1A6        ; 024   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3EC 044                         #044        
+ A3ED 1FF                         #1FF        ; 025   "a^3+c*a^2+d*a+e"   ; 61 5E 33 2B 63 2A 61 5E 32 2B 64 2A 61 2B 65 
+ A3EE 061                         #061        
+ A3EF 05E                         #05E        
+ A3F0 033                         #033        
+ A3F1 02B                         #02B        
+ A3F2 063                         #063        
+ A3F3 02A                         #02A        
+ A3F4 061                         #061        
+ A3F5 05E                         #05E        
+ A3F6 032                         #032        
+ A3F7 02B                         #02B        
+ A3F8 064                         #064        
+ A3F9 02A                         #02A        
+ A3FA 061                         #061        
+ A3FB 02B                         #02B        
+ A3FC 065                         #065        
+ A3FD 1A6                         #1A6        ; 026   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A3FE 044                         #044        
+ A3FF 1FC                         #1FC        ; 027   "X  Y  A B  C"      ; 58 20 20 59 20 20 41 20 42 20 20 43 
+ A400 058                         #058        
+ A401 020                         #020        
+ A402 020                         #020        
+ A403 059                         #059        
+ A404 020                         #020        
+ A405 020                         #020        
+ A406 041                         #041        
+ A407 020                         #020        
+ A408 042                         #042        
+ A409 020                         #020        
+ A40A 020                         #020        
+ A40B 043                         #043        
+ A40C 1A6                         #1A6        ; 028   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A40D 044                         #044        
+ A40E 1F9                         #1F9        ; 029   "4TH ORDER"         ; 34 54 48 20 4F 52 44 45 52 
+ A40F 034                         #034        
+ A410 054                         #054        
+ A411 048                         #048        
+ A412 020                         #020        
+ A413 04F                         #04F        
+ A414 052                         #052        
+ A415 044                         #044        
+ A416 045                         #045        
+ A417 052                         #052        
+ A418 1A6                         #1A6        ; 030   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A419 044                         #044        
+ A41A 1FF                         #1FF        ; 031   "D+X(C+X(B+X(A+X"   ; 44 2B 58 28 43 2B 58 28 42 2B 58 28 41 2B 58 
+ A41B 044                         #044        
+ A41C 02B                         #02B        
+ A41D 058                         #058        
+ A41E 028                         #028        
+ A41F 043                         #043        
+ A420 02B                         #02B        
+ A421 058                         #058        
+ A422 028                         #028        
+ A423 042                         #042        
+ A424 02B                         #02B        
+ A425 058                         #058        
+ A426 028                         #028        
+ A427 041                         #041        
+ A428 02B                         #02B        
+ A429 058                         #058        
+ A42A 1F4                         #1F4        ; 032   >")))"              ; 7F 29 29 29 
+ A42B 07F                         #07F        
+ A42C 029                         #029        
+ A42D 029                         #029        
+ A42E 029                         #029        
+ A42F 1A6                         #1A6        ; 033   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A430 044                         #044        
+ A431 1FF                         #1FF        ; 034   "e+a*(d+a*(c+a*("   ; 65 2B 61 2A 28 64 2B 61 2A 28 63 2B 61 2A 28 
+ A432 065                         #065        
+ A433 02B                         #02B        
+ A434 061                         #061        
+ A435 02A                         #02A        
+ A436 028                         #028        
+ A437 064                         #064        
+ A438 02B                         #02B        
+ A439 061                         #061        
+ A43A 02A                         #02A        
+ A43B 028                         #028        
+ A43C 063                         #063        
+ A43D 02B                         #02B        
+ A43E 061                         #061        
+ A43F 02A                         #02A        
+ A440 028                         #028        
+ A441 1F7                         #1F7        ; 035   >"b+a)))"           ; 7F 62 2B 61 29 29 29 
+ A442 07F                         #07F        
+ A443 062                         #062        
+ A444 02B                         #02B        
+ A445 061                         #061        
+ A446 029                         #029        
+ A447 029                         #029        
+ A448 029                         #029        
+ A449 1A6                         #1A6        ; 036   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A44A 044                         #044        
+ A44B 1FC                         #1FC        ; 037   "X? A  B C  D"      ; 58 3F 20 41 20 20 42 20 43 20 20 44 
+ A44C 058                         #058        
+ A44D 03F                         #03F        
+ A44E 020                         #020        
+ A44F 041                         #041        
+ A450 020                         #020        
+ A451 020                         #020        
+ A452 042                         #042        
+ A453 020                         #020        
+ A454 043                         #043        
+ A455 020                         #020        
+ A456 020                         #020        
+ A457 044                         #044        
+ A458 1A6                         #1A6        ; 038   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A459 044                         #044        
+ A45A 1F7                         #1F7        ; 039   "POSROOT"           ; 50 4F 53 52 4F 4F 54 
+ A45B 050                         #050        
+ A45C 04F                         #04F        
+ A45D 053                         #053        
+ A45E 052                         #052        
+ A45F 04F                         #04F        
+ A460 04F                         #04F        
+ A461 054                         #054        
+ A462 1A6                         #1A6        ; 040   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A463 044                         #044        
+ A464 1FF                         #1FF        ; 041   "X1=(-B+SQRT(B^2"   ; 58 31 3D 28 2D 42 2B 53 51 52 54 28 42 5E 32 
+ A465 058                         #058        
+ A466 031                         #031        
+ A467 03D                         #03D        
+ A468 028                         #028        
+ A469 02D                         #02D        
+ A46A 042                         #042        
+ A46B 02B                         #02B        
+ A46C 053                         #053        
+ A46D 051                         #051        
+ A46E 052                         #052        
+ A46F 054                         #054        
+ A470 028                         #028        
+ A471 042                         #042        
+ A472 05E                         #05E        
+ A473 032                         #032        
+ A474 1FA                         #1FA        ; 042   >"-4AC))/2A"        ; 7F 2D 34 41 43 29 29 2F 32 41 
+ A475 07F                         #07F        
+ A476 02D                         #02D        
+ A477 034                         #034        
+ A478 041                         #041        
+ A479 043                         #043        
+ A47A 029                         #029        
+ A47B 029                         #029        
+ A47C 02F                         #02F        
+ A47D 032                         #032        
+ A47E 041                         #041        
+ A47F 1A6                         #1A6        ; 043   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A480 044                         #044        
+ A481 1FF                         #1FF        ; 044   "(#b+Q(b^2-4*a*c"   ; 28 23 62 2B 51 28 62 5E 32 2D 34 2A 61 2A 63 
+ A482 028                         #028        
+ A483 023                         #023        
+ A484 062                         #062        
+ A485 02B                         #02B        
+ A486 051                         #051        
+ A487 028                         #028        
+ A488 062                         #062        
+ A489 05E                         #05E        
+ A48A 032                         #032        
+ A48B 02D                         #02D        
+ A48C 034                         #034        
+ A48D 02A                         #02A        
+ A48E 061                         #061        
+ A48F 02A                         #02A        
+ A490 063                         #063        
+ A491 1F9                         #1F9        ; 045   >"))/2/a-d"         ; 7F 29 29 2F 32 2F 61 2D 64 
+ A492 07F                         #07F        
+ A493 029                         #029        
+ A494 029                         #029        
+ A495 02F                         #02F        
+ A496 032                         #032        
+ A497 02F                         #02F        
+ A498 061                         #061        
+ A499 02D                         #02D        
+ A49A 064                         #064        
+ A49B 1A6                         #1A6        ; 046   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A49C 044                         #044        
+ A49D 1FA                         #1FA        ; 047   "A  B  C X1"        ; 41 20 20 42 20 20 43 20 58 31 
+ A49E 041                         #041        
+ A49F 020                         #020        
+ A4A0 020                         #020        
+ A4A1 042                         #042        
+ A4A2 020                         #020        
+ A4A3 020                         #020        
+ A4A4 043                         #043        
+ A4A5 020                         #020        
+ A4A6 058                         #058        
+ A4A7 031                         #031        
+ A4A8 1A6                         #1A6        ; 048   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A4A9 044                         #044        
+ A4AA 1F7                         #1F7        ; 049   "NEGROOT"           ; 4E 45 47 52 4F 4F 54 
+ A4AB 04E                         #04E        
+ A4AC 045                         #045        
+ A4AD 047                         #047        
+ A4AE 052                         #052        
+ A4AF 04F                         #04F        
+ A4B0 04F                         #04F        
+ A4B1 054                         #054        
+ A4B2 1A6                         #1A6        ; 050   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A4B3 044                         #044        
+ A4B4 1FF                         #1FF        ; 051   "X2=(-B-SQRT(B^2"   ; 58 32 3D 28 2D 42 2D 53 51 52 54 28 42 5E 32 
+ A4B5 058                         #058        
+ A4B6 032                         #032        
+ A4B7 03D                         #03D        
+ A4B8 028                         #028        
+ A4B9 02D                         #02D        
+ A4BA 042                         #042        
+ A4BB 02D                         #02D        
+ A4BC 053                         #053        
+ A4BD 051                         #051        
+ A4BE 052                         #052        
+ A4BF 054                         #054        
+ A4C0 028                         #028        
+ A4C1 042                         #042        
+ A4C2 05E                         #05E        
+ A4C3 032                         #032        
+ A4C4 1FA                         #1FA        ; 052   >"-4AC))/2A"        ; 7F 2D 34 41 43 29 29 2F 32 41 
+ A4C5 07F                         #07F        
+ A4C6 02D                         #02D        
+ A4C7 034                         #034        
+ A4C8 041                         #041        
+ A4C9 043                         #043        
+ A4CA 029                         #029        
+ A4CB 029                         #029        
+ A4CC 02F                         #02F        
+ A4CD 032                         #032        
+ A4CE 041                         #041        
+ A4CF 1A6                         #1A6        ; 053   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A4D0 044                         #044        
+ A4D1 1FF                         #1FF        ; 054   "(#b-Q(b^2-4*a*c"   ; 28 23 62 2D 51 28 62 5E 32 2D 34 2A 61 2A 63 
+ A4D2 028                         #028        
+ A4D3 023                         #023        
+ A4D4 062                         #062        
+ A4D5 02D                         #02D        
+ A4D6 051                         #051        
+ A4D7 028                         #028        
+ A4D8 062                         #062        
+ A4D9 05E                         #05E        
+ A4DA 032                         #032        
+ A4DB 02D                         #02D        
+ A4DC 034                         #034        
+ A4DD 02A                         #02A        
+ A4DE 061                         #061        
+ A4DF 02A                         #02A        
+ A4E0 063                         #063        
+ A4E1 1F9                         #1F9        ; 055   >"))/2/a-d"         ; 7F 29 29 2F 32 2F 61 2D 64 
+ A4E2 07F                         #07F        
+ A4E3 029                         #029        
+ A4E4 029                         #029        
+ A4E5 02F                         #02F        
+ A4E6 032                         #032        
+ A4E7 02F                         #02F        
+ A4E8 061                         #061        
+ A4E9 02D                         #02D        
+ A4EA 064                         #064        
+ A4EB 1A6                         #1A6        ; 056   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A4EC 044                         #044        
+ A4ED 1FA                         #1FA        ; 057   "A  B  C X2"        ; 41 20 20 42 20 20 43 20 58 32 
+ A4EE 041                         #041        
+ A4EF 020                         #020        
+ A4F0 020                         #020        
+ A4F1 042                         #042        
+ A4F2 020                         #020        
+ A4F3 020                         #020        
+ A4F4 043                         #043        
+ A4F5 020                         #020        
+ A4F6 058                         #058        
+ A4F7 032                         #032        
+ A4F8 1A6                         #1A6        ; 058   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A4F9 044                         #044        
+ A4FA 1F8                         #1F8        ; 059   "OHMS LAW"          ; 4F 48 4D 53 20 4C 41 57 
+ A4FB 04F                         #04F        
+ A4FC 048                         #048        
+ A4FD 04D                         #04D        
+ A4FE 053                         #053        
+ A4FF 020                         #020        
+ A500 04C                         #04C        
+ A501 041                         #041        
+ A502 057                         #057        
+ A503 1A6                         #1A6        ; 060   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A504 044                         #044        
+ A505 1F4                         #1F4        ; 061   "E=IR"              ; 45 3D 49 52 
+ A506 045                         #045        
+ A507 03D                         #03D        
+ A508 049                         #049        
+ A509 052                         #052        
+ A50A 1A6                         #1A6        ; 062   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A50B 044                         #044        
+ A50C 1F5                         #1F5        ; 063   "b*c-a"             ; 62 2A 63 2D 61 
+ A50D 062                         #062        
+ A50E 02A                         #02A        
+ A50F 063                         #063        
+ A510 02D                         #02D        
+ A511 061                         #061        
+ A512 1A6                         #1A6        ; 064   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A513 044                         #044        
+ A514 1F7                         #1F7        ; 065   "E  I  R"           ; 45 20 20 49 20 20 52 
+ A515 045                         #045        
+ A516 020                         #020        
+ A517 020                         #020        
+ A518 049                         #049        
+ A519 020                         #020        
+ A51A 020                         #020        
+ A51B 052                         #052        
+ A51C 1A6                         #1A6        ; 066   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A51D 044                         #044        
+ A51E 1FA                         #1FA        ; 067   "PARALLEL R"        ; 50 41 52 41 4C 4C 45 4C 20 52 
+ A51F 050                         #050        
+ A520 041                         #041        
+ A521 052                         #052        
+ A522 041                         #041        
+ A523 04C                         #04C        
+ A524 04C                         #04C        
+ A525 045                         #045        
+ A526 04C                         #04C        
+ A527 020                         #020        
+ A528 052                         #052        
+ A529 1A6                         #1A6        ; 068   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A52A 044                         #044        
+ A52B 1FE                         #1FE        ; 069   "1/R1=1/R2+1/R3"    ; 31 2F 52 31 3D 31 2F 52 32 2B 31 2F 52 33 
+ A52C 031                         #031        
+ A52D 02F                         #02F        
+ A52E 052                         #052        
+ A52F 031                         #031        
+ A530 03D                         #03D        
+ A531 031                         #031        
+ A532 02F                         #02F        
+ A533 052                         #052        
+ A534 032                         #032        
+ A535 02B                         #02B        
+ A536 031                         #031        
+ A537 02F                         #02F        
+ A538 052                         #052        
+ A539 033                         #033        
+ A53A 1A6                         #1A6        ; 070   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A53B 044                         #044        
+ A53C 1FB                         #1FB        ; 071   "1/b+1/c-1/a"       ; 31 2F 62 2B 31 2F 63 2D 31 2F 61 
+ A53D 031                         #031        
+ A53E 02F                         #02F        
+ A53F 062                         #062        
+ A540 02B                         #02B        
+ A541 031                         #031        
+ A542 02F                         #02F        
+ A543 063                         #063        
+ A544 02D                         #02D        
+ A545 031                         #031        
+ A546 02F                         #02F        
+ A547 061                         #061        
+ A548 1A6                         #1A6        ; 072   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A549 044                         #044        
+ A54A 1F8                         #1F8        ; 073   "R1 R2 R3"          ; 52 31 20 52 32 20 52 33 
+ A54B 052                         #052        
+ A54C 031                         #031        
+ A54D 020                         #020        
+ A54E 052                         #052        
+ A54F 032                         #032        
+ A550 020                         #020        
+ A551 052                         #052        
+ A552 033                         #033        
+ A553 1A6                         #1A6        ; 074   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A554 044                         #044        
+ A555 1F9                         #1F9        ; 075   "RLC FREQ."         ; 52 4C 43 20 46 52 45 51 2E 
+ A556 052                         #052        
+ A557 04C                         #04C        
+ A558 043                         #043        
+ A559 020                         #020        
+ A55A 046                         #046        
+ A55B 052                         #052        
+ A55C 045                         #045        
+ A55D 051                         #051        
+ A55E 02E                         #02E        
+ A55F 1A6                         #1A6        ; 076   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A560 044                         #044        
+ A561 1FD                         #1FD        ; 077   "F0=1/SQRT(LC)"     ; 46 30 3D 31 2F 53 51 52 54 28 4C 43 29 
+ A562 046                         #046        
+ A563 030                         #030        
+ A564 03D                         #03D        
+ A565 031                         #031        
+ A566 02F                         #02F        
+ A567 053                         #053        
+ A568 051                         #051        
+ A569 052                         #052        
+ A56A 054                         #054        
+ A56B 028                         #028        
+ A56C 04C                         #04C        
+ A56D 043                         #043        
+ A56E 029                         #029        
+ A56F 1A6                         #1A6        ; 078   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A570 044                         #044        
+ A571 1FA                         #1FA        ; 079   "1/Q(b*c)-a"        ; 31 2F 51 28 62 2A 63 29 2D 61 
+ A572 031                         #031        
+ A573 02F                         #02F        
+ A574 051                         #051        
+ A575 028                         #028        
+ A576 062                         #062        
+ A577 02A                         #02A        
+ A578 063                         #063        
+ A579 029                         #029        
+ A57A 02D                         #02D        
+ A57B 061                         #061        
+ A57C 1A6                         #1A6        ; 080   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A57D 044                         #044        
+ A57E 1F7                         #1F7        ; 081   "F0 L  C"           ; 46 30 20 4C 20 20 43 
+ A57F 046                         #046        
+ A580 030                         #030        
+ A581 020                         #020        
+ A582 04C                         #04C        
+ A583 020                         #020        
+ A584 020                         #020        
+ A585 043                         #043        
+ A586 1A6                         #1A6        ; 082   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A587 044                         #044        
+ A588 1FC                         #1FC        ; 083   "GAS EQUATION"      ; 47 41 53 20 45 51 55 41 54 49 4F 4E 
+ A589 047                         #047        
+ A58A 041                         #041        
+ A58B 053                         #053        
+ A58C 020                         #020        
+ A58D 045                         #045        
+ A58E 051                         #051        
+ A58F 055                         #055        
+ A590 041                         #041        
+ A591 054                         #054        
+ A592 049                         #049        
+ A593 04F                         #04F        
+ A594 04E                         #04E        
+ A595 1A6                         #1A6        ; 084   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A596 044                         #044        
+ A597 1F6                         #1F6        ; 085   "PV=NRT"            ; 50 56 3D 4E 52 54 
+ A598 050                         #050        
+ A599 056                         #056        
+ A59A 03D                         #03D        
+ A59B 04E                         #04E        
+ A59C 052                         #052        
+ A59D 054                         #054        
+ A59E 1A6                         #1A6        ; 086   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A59F 044                         #044        
+ A5A0 1FF                         #1FF        ; 087   "c*(16629/2000)*"   ; 63 2A 28 31 36 36 32 39 2F 32 30 30 30 29 2A 
+ A5A1 063                         #063        
+ A5A2 02A                         #02A        
+ A5A3 028                         #028        
+ A5A4 031                         #031        
+ A5A5 036                         #036        
+ A5A6 036                         #036        
+ A5A7 032                         #032        
+ A5A8 039                         #039        
+ A5A9 02F                         #02F        
+ A5AA 032                         #032        
+ A5AB 030                         #030        
+ A5AC 030                         #030        
+ A5AD 030                         #030        
+ A5AE 029                         #029        
+ A5AF 02A                         #02A        
+ A5B0 1F6                         #1F6        ; 088   >"b-a*b"            ; 7F 62 2D 61 2A 62 
+ A5B1 07F                         #07F        
+ A5B2 062                         #062        
+ A5B3 02D                         #02D        
+ A5B4 061                         #061        
+ A5B5 02A                         #02A        
+ A5B6 062                         #062        
+ A5B7 1A6                         #1A6        ; 089   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A5B8 044                         #044        
+ A5B9 1F9                         #1F9        ; 090   "P  V  N T"         ; 50 20 20 56 20 20 4E 20 54 
+ A5BA 050                         #050        
+ A5BB 020                         #020        
+ A5BC 020                         #020        
+ A5BD 056                         #056        
+ A5BE 020                         #020        
+ A5BF 020                         #020        
+ A5C0 04E                         #04E        
+ A5C1 020                         #020        
+ A5C2 054                         #054        
+ A5C3 1A6                         #1A6        ; 091   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A5C4 044                         #044        
+ A5C5 1FB                         #1FB        ; 092   "LIN. MOTION"       ; 4C 49 4E 2E 20 4D 4F 54 49 4F 4E 
+ A5C6 04C                         #04C        
+ A5C7 049                         #049        
+ A5C8 04E                         #04E        
+ A5C9 02E                         #02E        
+ A5CA 020                         #020        
+ A5CB 04D                         #04D        
+ A5CC 04F                         #04F        
+ A5CD 054                         #054        
+ A5CE 049                         #049        
+ A5CF 04F                         #04F        
+ A5D0 04E                         #04E        
+ A5D1 1A6                         #1A6        ; 093   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A5D2 044                         #044        
+ A5D3 1FD                         #1FD        ; 094   "X=VT+1/2*AT^2"     ; 58 3D 56 54 2B 31 2F 32 2A 41 54 5E 32 
+ A5D4 058                         #058        
+ A5D5 03D                         #03D        
+ A5D6 056                         #056        
+ A5D7 054                         #054        
+ A5D8 02B                         #02B        
+ A5D9 031                         #031        
+ A5DA 02F                         #02F        
+ A5DB 032                         #032        
+ A5DC 02A                         #02A        
+ A5DD 041                         #041        
+ A5DE 054                         #054        
+ A5DF 05E                         #05E        
+ A5E0 032                         #032        
+ A5E1 1A6                         #1A6        ; 095   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A5E2 044                         #044        
+ A5E3 1FF                         #1FF        ; 096   "c*b+(1/2)*d*b^2"   ; 63 2A 62 2B 28 31 2F 32 29 2A 64 2A 62 5E 32 
+ A5E4 063                         #063        
+ A5E5 02A                         #02A        
+ A5E6 062                         #062        
+ A5E7 02B                         #02B        
+ A5E8 028                         #028        
+ A5E9 031                         #031        
+ A5EA 02F                         #02F        
+ A5EB 032                         #032        
+ A5EC 029                         #029        
+ A5ED 02A                         #02A        
+ A5EE 064                         #064        
+ A5EF 02A                         #02A        
+ A5F0 062                         #062        
+ A5F1 05E                         #05E        
+ A5F2 032                         #032        
+ A5F3 1F3                         #1F3        ; 097   >"-a"               ; 7F 2D 61 
+ A5F4 07F                         #07F        
+ A5F5 02D                         #02D        
+ A5F6 061                         #061        
+ A5F7 1A6                         #1A6        ; 098   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A5F8 044                         #044        
+ A5F9 1F9                         #1F9        ; 099   "X  T  V A"         ; 58 20 20 54 20 20 56 20 41 
+ A5FA 058                         #058        
+ A5FB 020                         #020        
+ A5FC 020                         #020        
+ A5FD 054                         #054        
+ A5FE 020                         #020        
+ A5FF 020                         #020        
+ A600 056                         #056        
+ A601 020                         #020        
+ A602 041                         #041        
+ A603 1A6                         #1A6        ; 100   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A604 044                         #044        
+ A605 1FB                         #1FB        ; 101   "NEWTONS LAW"       ; 4E 45 57 54 4F 4E 53 20 4C 41 57 
+ A606 04E                         #04E        
+ A607 045                         #045        
+ A608 057                         #057        
+ A609 054                         #054        
+ A60A 04F                         #04F        
+ A60B 04E                         #04E        
+ A60C 053                         #053        
+ A60D 020                         #020        
+ A60E 04C                         #04C        
+ A60F 041                         #041        
+ A610 057                         #057        
+ A611 1A6                         #1A6        ; 102   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A612 044                         #044        
+ A613 1FD                         #1FD        ; 103   "F=G*M1*M2/R^2"     ; 46 3D 47 2A 4D 31 2A 4D 32 2F 52 5E 32 
+ A614 046                         #046        
+ A615 03D                         #03D        
+ A616 047                         #047        
+ A617 02A                         #02A        
+ A618 04D                         #04D        
+ A619 031                         #031        
+ A61A 02A                         #02A        
+ A61B 04D                         #04D        
+ A61C 032                         #032        
+ A61D 02F                         #02F        
+ A61E 052                         #052        
+ A61F 05E                         #05E        
+ A620 032                         #032        
+ A621 1A6                         #1A6        ; 104   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A622 044                         #044        
+ A623 1FB                         #1FB        ; 105   "e*b*c/d^2-a"       ; 65 2A 62 2A 63 2F 64 5E 32 2D 61 
+ A624 065                         #065        
+ A625 02A                         #02A        
+ A626 062                         #062        
+ A627 02A                         #02A        
+ A628 063                         #063        
+ A629 02F                         #02F        
+ A62A 064                         #064        
+ A62B 05E                         #05E        
+ A62C 032                         #032        
+ A62D 02D                         #02D        
+ A62E 061                         #061        
+ A62F 1A6                         #1A6        ; 106   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A630 044                         #044        
+ A631 1FC                         #1FC        ; 107   "F  M1 M2 R G"      ; 46 20 20 4D 31 20 4D 32 20 52 20 47 
+ A632 046                         #046        
+ A633 020                         #020        
+ A634 020                         #020        
+ A635 04D                         #04D        
+ A636 031                         #031        
+ A637 020                         #020        
+ A638 04D                         #04D        
+ A639 032                         #032        
+ A63A 020                         #020        
+ A63B 052                         #052        
+ A63C 020                         #020        
+ A63D 047                         #047        
+ A63E 1A6                         #1A6        ; 108   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A63F 044                         #044        
+ A640 1F8                         #1F8        ; 109   "INTEREST"          ; 49 4E 54 45 52 45 53 54 
+ A641 049                         #049        
+ A642 04E                         #04E        
+ A643 054                         #054        
+ A644 045                         #045        
+ A645 052                         #052        
+ A646 045                         #045        
+ A647 053                         #053        
+ A648 054                         #054        
+ A649 1A6                         #1A6        ; 110   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A64A 044                         #044        
+ A64B 1F9                         #1F9        ; 111   "P=PERIODS"         ; 50 3D 50 45 52 49 4F 44 53 
+ A64C 050                         #050        
+ A64D 03D                         #03D        
+ A64E 050                         #050        
+ A64F 045                         #045        
+ A650 052                         #052        
+ A651 049                         #049        
+ A652 04F                         #04F        
+ A653 044                         #044        
+ A654 053                         #053        
+ A655 1A6                         #1A6        ; 112   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A656 044                         #044        
+ A657 1FF                         #1FF        ; 113   "((1+b/100/c)^c-"   ; 28 28 31 2B 62 2F 31 30 30 2F 63 29 5E 63 2D 
+ A658 028                         #028        
+ A659 028                         #028        
+ A65A 031                         #031        
+ A65B 02B                         #02B        
+ A65C 062                         #062        
+ A65D 02F                         #02F        
+ A65E 031                         #031        
+ A65F 030                         #030        
+ A660 030                         #030        
+ A661 02F                         #02F        
+ A662 063                         #063        
+ A663 029                         #029        
+ A664 05E                         #05E        
+ A665 063                         #063        
+ A666 02D                         #02D        
+ A667 1F9                         #1F9        ; 114   >"1)*100-a"         ; 7F 31 29 2A 31 30 30 2D 61 
+ A668 07F                         #07F        
+ A669 031                         #031        
+ A66A 029                         #029        
+ A66B 02A                         #02A        
+ A66C 031                         #031        
+ A66D 030                         #030        
+ A66E 030                         #030        
+ A66F 02D                         #02D        
+ A670 061                         #061        
+ A671 1A6                         #1A6        ; 115   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A672 044                         #044        
+ A673 1F9                         #1F9        ; 116   "EFF NOM P"         ; 45 46 46 20 4E 4F 4D 20 50 
+ A674 045                         #045        
+ A675 046                         #046        
+ A676 046                         #046        
+ A677 020                         #020        
+ A678 04E                         #04E        
+ A679 04F                         #04F        
+ A67A 04D                         #04D        
+ A67B 020                         #020        
+ A67C 050                         #050        
+ A67D 1A6                         #1A6        ; 117   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A67E 044                         #044        
+ A67F 1FC                         #1FC        ; 118   "TVM END MODE"      ; 54 56 4D 20 45 4E 44 20 4D 4F 44 45 
+ A680 054                         #054        
+ A681 056                         #056        
+ A682 04D                         #04D        
+ A683 020                         #020        
+ A684 045                         #045        
+ A685 04E                         #04E        
+ A686 044                         #044        
+ A687 020                         #020        
+ A688 04D                         #04D        
+ A689 04F                         #04F        
+ A68A 044                         #044        
+ A68B 045                         #045        
+ A68C 1A6                         #1A6        ; 119   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A68D 044                         #044        
+ A68E 1FC                         #1FC        ; 120   "6%/YR=.06/12"      ; 36 25 2F 59 52 3D 2E 30 36 2F 31 32 
+ A68F 036                         #036        
+ A690 025                         #025        
+ A691 02F                         #02F        
+ A692 059                         #059        
+ A693 052                         #052        
+ A694 03D                         #03D        
+ A695 02E                         #02E        
+ A696 030                         #030        
+ A697 036                         #036        
+ A698 02F                         #02F        
+ A699 031                         #031        
+ A69A 032                         #032        
+ A69B 1A6                         #1A6        ; 121   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A69C 044                         #044        
+ A69D 1FF                         #1FF        ; 122   "a+(1+b)*c*((1-("   ; 61 2B 28 31 2B 62 29 2A 63 2A 28 28 31 2D 28 
+ A69E 061                         #061        
+ A69F 02B                         #02B        
+ A6A0 028                         #028        
+ A6A1 031                         #031        
+ A6A2 02B                         #02B        
+ A6A3 062                         #062        
+ A6A4 029                         #029        
+ A6A5 02A                         #02A        
+ A6A6 063                         #063        
+ A6A7 02A                         #02A        
+ A6A8 028                         #028        
+ A6A9 028                         #028        
+ A6AA 031                         #031        
+ A6AB 02D                         #02D        
+ A6AC 028                         #028        
+ A6AD 1A6                         #1A6        ; 123   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A6AE 044                         #044        
+ A6AF 1FE                         #1FE        ; 124   "1+b)^#d)/b)+e*"    ; 31 2B 62 29 5E 23 64 29 2F 62 29 2B 65 2A 
+ A6B0 031                         #031        
+ A6B1 02B                         #02B        
+ A6B2 062                         #062        
+ A6B3 029                         #029        
+ A6B4 05E                         #05E        
+ A6B5 023                         #023        
+ A6B6 064                         #064        
+ A6B7 029                         #029        
+ A6B8 02F                         #02F        
+ A6B9 062                         #062        
+ A6BA 029                         #029        
+ A6BB 02B                         #02B        
+ A6BC 065                         #065        
+ A6BD 02A                         #02A        
+ A6BE 1A6                         #1A6        ; 125   XROM APPCHR         ; XROM 25,03 Extended Functions ROM
+ A6BF 043                         #043        
+ A6C0 1F8                         #1F8        ; 126   "(1+b)^#d"          ; 28 31 2B 62 29 5E 23 64 
+ A6C1 028                         #028        
+ A6C2 031                         #031        
+ A6C3 02B                         #02B        
+ A6C4 062                         #062        
+ A6C5 029                         #029        
+ A6C6 05E                         #05E        
+ A6C7 023                         #023        
+ A6C8 064                         #064        
+ A6C9 1A6                         #1A6        ; 127   XROM APPCHR         ; XROM 25,03 Extended Functions ROM
+ A6CA 043                         #043        
+ A6CB 1FC                         #1FC        ; 128   "PV I PM N FV"      ; 50 56 20 49 20 50 4D 20 4E 20 46 56 
+ A6CC 050                         #050        
+ A6CD 056                         #056        
+ A6CE 020                         #020        
+ A6CF 049                         #049        
+ A6D0 020                         #020        
+ A6D1 050                         #050        
+ A6D2 04D                         #04D        
+ A6D3 020                         #020        
+ A6D4 04E                         #04E        
+ A6D5 020                         #020        
+ A6D6 046                         #046        
+ A6D7 056                         #056        
+ A6D8 1A6                         #1A6        ; 129   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A6D9 044                         #044        
+ A6DA 1FC                         #1FC        ; 130   "TVM BEG MODE"      ; 54 56 4D 20 42 45 47 20 4D 4F 44 45 
+ A6DB 054                         #054        
+ A6DC 056                         #056        
+ A6DD 04D                         #04D        
+ A6DE 020                         #020        
+ A6DF 042                         #042        
+ A6E0 045                         #045        
+ A6E1 047                         #047        
+ A6E2 020                         #020        
+ A6E3 04D                         #04D        
+ A6E4 04F                         #04F        
+ A6E5 044                         #044        
+ A6E6 045                         #045        
+ A6E7 1A6                         #1A6        ; 131   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A6E8 044                         #044        
+ A6E9 1FC                         #1FC        ; 132   "6%/YR=.06/12"      ; 36 25 2F 59 52 3D 2E 30 36 2F 31 32 
+ A6EA 036                         #036        
+ A6EB 025                         #025        
+ A6EC 02F                         #02F        
+ A6ED 059                         #059        
+ A6EE 052                         #052        
+ A6EF 03D                         #03D        
+ A6F0 02E                         #02E        
+ A6F1 030                         #030        
+ A6F2 036                         #036        
+ A6F3 02F                         #02F        
+ A6F4 031                         #031        
+ A6F5 032                         #032        
+ A6F6 1A6                         #1A6        ; 133   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A6F7 044                         #044        
+ A6F8 1FD                         #1FD        ; 134   "a+c*((1-(1-b)"     ; 61 2B 63 2A 28 28 31 2D 28 31 2D 62 29 
+ A6F9 061                         #061        
+ A6FA 02B                         #02B        
+ A6FB 063                         #063        
+ A6FC 02A                         #02A        
+ A6FD 028                         #028        
+ A6FE 028                         #028        
+ A6FF 031                         #031        
+ A700 02D                         #02D        
+ A701 028                         #028        
+ A702 031                         #031        
+ A703 02D                         #02D        
+ A704 062                         #062        
+ A705 029                         #029        
+ A706 1A6                         #1A6        ; 135   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A707 044                         #044        
+ A708 1FA                         #1FA        ; 136   "^#d)/b)+e*"        ; 5E 23 64 29 2F 62 29 2B 65 2A 
+ A709 05E                         #05E        
+ A70A 023                         #023        
+ A70B 064                         #064        
+ A70C 029                         #029        
+ A70D 02F                         #02F        
+ A70E 062                         #062        
+ A70F 029                         #029        
+ A710 02B                         #02B        
+ A711 065                         #065        
+ A712 02A                         #02A        
+ A713 1A6                         #1A6        ; 137   XROM APPCHR         ; XROM 25,03 Extended Functions ROM
+ A714 043                         #043        
+ A715 1F8                         #1F8        ; 138   "(1+b)^#d"          ; 28 31 2B 62 29 5E 23 64 
+ A716 028                         #028        
+ A717 031                         #031        
+ A718 02B                         #02B        
+ A719 062                         #062        
+ A71A 029                         #029        
+ A71B 05E                         #05E        
+ A71C 023                         #023        
+ A71D 064                         #064        
+ A71E 1A6                         #1A6        ; 139   XROM APPCHR         ; XROM 25,03 Extended Functions ROM
+ A71F 043                         #043        
+ A720 1FC                         #1FC        ; 140   "PV I PM N FV"      ; 50 56 20 49 20 50 4D 20 4E 20 46 56 
+ A721 050                         #050        
+ A722 056                         #056        
+ A723 020                         #020        
+ A724 049                         #049        
+ A725 020                         #020        
+ A726 050                         #050        
+ A727 04D                         #04D        
+ A728 020                         #020        
+ A729 04E                         #04E        
+ A72A 020                         #020        
+ A72B 046                         #046        
+ A72C 056                         #056        
+ A72D 1A6                         #1A6        ; 141   XROM APPREC         ; XROM 25,04 Extended Functions ROM
+ A72E 044                         #044        
+ A72F 1CA                         #1CA        ; 142   END                 ; Program END, previous LBL @A35D [-978 bytes]
+ A730 08B                         #08B        
+ A731 22F                         #22F        
+
+                                  .MCODE
+                                  .BSS        202                         ; 202 consecutive NOPs from $A732 to $A7FB
+
+                                  .NAME       "Z=T?"                      ; 01A 03D 014 0BF  
+*A7FC 0BF                         #0BF                                    ; "?"
+*A7FD 014                         #014                                    ; "T"
+*A7FE 03D                         #03D                                    ; "="
+*A7FF 01A                         #01A                                    ; "Z"
+ A800 078        [Z=T?]           READ        1                           ; ( 1)Z
+ A801 10E                         A=C         ALL         
+ A802 04E                         C=0         ALL         
+ A803 270                         RAMSLCT                 
+ A804 038                         READ        0                           ; ( 0)T
+ A805 36E                         ?A#C        ALL         
+ A806 06505A                      ?NCGO       [NOSKP]     1619            ; HP41 SYSTEM ROM 1
+ A808 1410A4                      ?NCXQ       [GETPC]     2950            ; HP41 SYSTEM ROM 2
+ A80A 3E50A8                      ?NCXQ       [SKPLIN]    2AF9            ; HP41 SYSTEM ROM 2
+ A80C 0BD08C                      ?NCXQ       [PUTPCX]    232F            ; HP41 SYSTEM ROM 2
+ A80E 3E0                         RTN                     
+                                  .BSS        2019                        ; 2010 consecutive NOPs from $A80F to $AFE8
+
+ AFF4 000        [_EN_PSE]        NOP                     
+ AFF5 000        [_EN_PRGM]       NOP                     
+ AFF6 000        [_EN_SLEEP]      NOP                     
+ AFF7 000        [_EN_OFF]        NOP                     
+ AFF8 000        [_EN_IOSVC]      NOP                     
+ AFF9 000        [_EN_ON]         NOP                     
+ AFFA 000        [_EN_MEMLST]     NOP                     
+
+ AFFB 000        [_ROMREV]        #000                                    ; "@" ROM Revision @@-@@
+ AFFC 000        [_ROMREV]        #000                                    ; "@"
+ AFFD 000        [_ROMREV]        #000                                    ; "@"
+ AFFE 000        [_ROMREV]        #000                                    ; "@"
+
+ AFFF 067        [_CHKSUM]        CON         067                         ; Calculated Checksum: 067
+
