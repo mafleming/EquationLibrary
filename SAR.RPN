@@ -1,0 +1,35 @@
+LBL "SAR"                         ;; Search And Replace
+"FNAME?"                          ;; Name of XM file
+AON
+PMTA                              ;; Display prompt, return result (OSX3)
+LBL "SAR$"                        ;; Search And Replace, filename in Alpha
+ASTO 02                           ;; Save for exit
+0                                 ;; "0.0"
+SEEKPTA                           ;; Set character pointer to start of file
+"SEARCH?"
+AON
+PMTA                              ;; Display prompt, return result (OSX3)
+ASTO 00                           ;; Save search string
+"RPLCE?"
+AON
+PMTA                              ;; Display prompt, return result (OSX3)
+AOFF
+ASTO 01                           ;; Save replacement string
+LBL 00
+CLA
+ARCL 00                           ;; Retrieve search string
+POSFL                             ;; Find position of search string in file
+X<0?
+GTO 01                            ;; No more matches, exit program
+ALENG                             ;; Get length of search string
+DELCHR                            ;; Delete matching search string characters
+CLA
+ARCL 01                           ;; Retrieve replacement string
+INSCHR                            ;; Insert it into the file
+RDN                               ;; Drop the length
+GTO 00
+LBL 01
+CLA
+ARCL 02                           ;; Recall filename for use by ED
+RDN
+END

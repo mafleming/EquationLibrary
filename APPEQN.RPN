@@ -1,0 +1,25 @@
+LBL "APPEQN"                      ;; Search And Replace
+"EQNS"                            ;; Default name of XM file
+LBL "APP$"                        ;; Entry point for filename in ALPHA
+0
+SEEKPTA                           ;; Go to file beginning
+LBL 00                            ;; Loop until end of file reached
+1
++
+SF 25
+SEEKPTA                           ;; Go to next record in file
+FS?C 25                           ;; Error if at the end of the file already
+GTO 00
+FLSIZE                            ;; Get file size
+10
++
+RESZFL                            ;; Make room for new equation
+"EQN NAME"                        ;; Text of equation name here
+APPREC                            ;; Append to end of file
+"EXPRESSION"                      ;; Text of equation expression or comment here
+APPREC                            ;; Append to end of file
+"FORMULA"                         ;; Text of equation formula here
+APPREC                            ;; Append to end of file
+"EQN MENU"                        ;; Text of equation menu here
+APPREC                            ;; Append to end of file
+END

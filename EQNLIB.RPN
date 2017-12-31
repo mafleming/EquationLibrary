@@ -1,0 +1,211 @@
+LBL "EQNLIB"                      ;; Equation Library
+"EQNS"                            ;; Default Equation Library Data
+LBL "EQN$"                        ;; User specified library
+0
+STO 08                            ;; Initialize record pointer
+SEEKPTA                           ;; Go to beginning
+GETREC                            ;; Get equation name
+AVIEW                             ;; and display it
+RTN
+
+LBL "F"                           ;; Advance to next equation
+RCL 08
+4                                 ;; Records per equation
++
+SF 25                             ;; Set Error flag
+SEEKPT                            ;; Go to next equation
+FC?C 25                           ;; Did the seek succeed?
+GTO 00                            ;; No, don't update record pointer
+STO 08
+GETREC                            ;; Get equation name/formula
+LBL 00
+AVIEW                             ;; and display it
+RTN
+
+LBL "G"                           ;; Go back to previous equation
+RCL 08
+4
+-
+X<0?                              ;; Still within file?
+GTO 00                            ;; No, leave as-is
+STO 08                            ;; Update pointer
+SEEKPT                            ;; Go to equation
+GETREC                            ;; Get formula name or equation
+LBL 00
+AVIEW                             ;; and display it
+RTN
+LBL "H"                           ;; Switch between equation name & formula views
+RCL 08                            ;; Record pointer
+4                                 ;; Record size
+MOD
+X=0?                              ;; Are we pointing to an equation name
+GTO 00                            ;; Yes, need to bump record pointer by one
+1                                 ;; No, decrement record pointer by one
+ST- 08
+GTO 01
+LBL 00
+1
+ST+ 08
+LBL 01
+RCL 08
+SEEKPT                            ;; Go to equation name or formula record
+GETREC                            ;; Retrieve record
+AVIEW                             ;; and display it
+RTN
+
+LBL "I"                           ;; Refresh view
+AVIEW
+RTN
+
+LBL "J"                           ;; Select equation and solve
+RCL 08
+RCL 08
+4
+MOD
+-
+STO 08                            ;; Reset pointer to start of the formula block
+3
++
+SEEKPT                            ;; Menu record is 4th entry
+GETREC
+AVIEW                             ;; Display menu
+RTN
+LBL "A"                           ;; First variable
+FC?C 22                           ;; Was a number entered?
+GTO 00                            ;; No, solve for variable
+LET=                              ;; Set variable
+1                                 ;; "a"
+STO 01                            ;; Save value for recall
+GTO "J"                           ;; Redisplay menu
+LBL 00
+1                                 ;; "a"
+XEQ 10                            ;; Replace character and invoke solver
+LET=                              ;; Save result back to variable
+1                                 ;; "a"
+STO 01                            ;; Save result for recall
+RTN
+
+LBL "B"                           ;; Second variable
+FC?C 22                           ;; Was a number entered?
+GTO 00                            ;; No, solve for variable
+LET=                              ;; Set variable
+2                                 ;; "b"
+STO 02                            ;; Save value for recall
+GTO "J"                           ;; Redisplay menu
+LBL 00
+2                                 ;; "b"
+XEQ 10                            ;; Replace character and invoke solver
+LET=                              ;; Save result back to variable
+2                                 ;; "b"
+STO 02                            ;; Save result for recall
+RTN
+
+LBL "C"                           ;; Third variable
+FC?C 22                           ;; Was a number entered?
+GTO 00                            ;; No, solve for variable
+LET=                              ;; Set variable
+3                                 ;; "c"
+STO 03                            ;; Save value for recall
+GTO "J"                           ;; Redisplay menu
+LBL 00
+3                                 ;; "c"
+XEQ 10                            ;; Replace character and invoke solver
+LET=                              ;; Save result back to variable
+3                                 ;; "c"
+STO 03                            ;; Save result for recall
+RTN
+LBL "D"                           ;; Forth variable
+FC?C 22                           ;; Was a number entered?
+GTO 00                            ;; No, solve for variable
+LET=                              ;; Set variable
+4                                 ;; "d"
+STO 04                            ;; Save value for recall
+GTO "J"                           ;; Redisplay menu
+LBL 00
+4                                 ;; "d"
+XEQ 10                            ;; Replace character and invoke solver
+LET=                              ;; Save result back to variable
+4
+STO 04                            ;; Save result for recall
+RTN
+
+LBL "E"                           ;; Fifth variable
+FC?C 22                           ;; Was a number entered?
+GTO 00                            ;; No, solve for variable
+LET=                              ;; Set variable
+5                                 ;; "e"
+STO 05                            ;; Save value for recall
+GTO "J"                           ;; Redisplay menu
+LBL 00
+5                                 ;; "e"
+XEQ 10                            ;; Replace character and invoke solver
+LET=                              ;; Save result back to variable
+5
+STO 05                            ;; Save result for recall
+RTN
+LBL "a"
+1                                 ;; "a"
+XEQ 12                            ;; Save guesses and replace character
+LET=                              ;; Save result back to variable
+1                                 ;; "a"
+STO 01                            ;; Save result for recall
+RTN
+
+LBL "b"
+2                                 ;; "b"
+XEQ 12                            ;; Save guesses and replace character
+LET=                              ;; Save result back to variable
+2                                 ;; "b"
+STO 02                            ;; Save result for recall
+RTN
+
+LBL "c"
+3                                 ;; "c"
+XEQ 12                            ;; Save guesses and replace character
+LET=                              ;; Save result back to variable
+3                                 ;; "c"
+STO 03                            ;; Save result for recall
+RTN
+
+LBL "d"
+4                                 ;; "d"
+XEQ 12                            ;; Save guesses and replace character
+LET=                              ;; Save result back to variable
+4                                 ;; "d"
+STO 04                            ;; Save result for recall
+RTN
+
+LBL "e"
+5                                 ;; "e"
+XEQ 12                            ;; Save guesses and replace character
+LET=                              ;; Save result back to variable
+5                                 ;; "e"
+STO 05                            ;; Save result for recall
+RTN
+LBL 10                            ;; Solve for unknown variable, letter in X register
+1E-99                             ;; Default solver guesses
+STO 07
+1
+STO 06
+RDN
+RDN
+LBL 11                            ;; Replace character in formula(s)
+STO 09                            ;; Save variable number to solve for in register 04
+RCL 08
+2
++
+SEEKPT
+RCL 07                            ;; High guess
+RCL 06                            ;; Low guess
+XEQ "ESLV"                        ;; Internal solver, regular equation library
+RTN
+
+LBL 12                            ;; Save initial guesses and invoke solver
+RDN
+STO 06
+RDN
+STO 07
+RDN
+RDN                               ;; X has character to replace in formula
+GTO 11                            ;; Invoke Solver
+END

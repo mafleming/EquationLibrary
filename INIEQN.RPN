@@ -1,0 +1,142 @@
+LBL "INIEQN"
+"EQNS"
+128
+CRFLAS
+"LINEAR"
+APPREC
+"Y=AX+B"
+APPREC
+"c*a+d-b"
+APPREC
+"X  Y  A  B"
+APPREC
+"QUADRATIC"
+APPREC
+"Y=AX↑2+BX+C"
+APPREC
+"c*a↑2+d*a+e-b"
+APPREC
+"X  Y  A B  C"
+APPREC
+"CUBIC"
+APPREC
+"Y=X↑3+AX↑2+BX+C"
+APPREC
+"a↑3+c*a↑2+d*a+e"
+APPREC
+"X  Y  A B  C"
+APPREC
+"4TH ORDER"
+APPREC
+"D+X(C+X(B+X(A+X"
+>")))"
+APPREC
+"e+a*(d+a*(c+a*("
+>"b+a)))"
+APPREC
+"X? A  B C  D"
+APPREC
+"POSROOT"
+APPREC
+"X1=(-B+SQRT(B↑2"
+>"-4AC))/2A"
+APPREC
+"(#b+Q(b↑2-4*a*c"
+>"))/2/a-d"
+APPREC
+"A  B  C X1"
+APPREC
+"NEGROOT"
+APPREC
+"X2=(-B-SQRT(B↑2"
+>"-4AC))/2A"
+APPREC
+"(#b-Q(b↑2-4*a*c"
+>"))/2/a-d"
+APPREC
+"A  B  C X2"
+APPREC
+"OHMS LAW"
+APPREC
+"E=IR"
+APPREC
+"b*c-a"
+APPREC
+"E  I  R"
+APPREC
+"PARALLEL R"
+APPREC
+"1/R1=1/R2+1/R3"
+APPREC
+"1/b+1/c-1/a"
+APPREC
+"R1 R2 R3"
+APPREC
+"RLC FREQ."
+APPREC
+"F0=1/SQRT(LC)"
+APPREC
+"1/Q(b*c)-a"
+APPREC
+"F0 L  C"
+APPREC
+"GAS EQUATION"
+APPREC
+"PV=NRT"
+APPREC
+"c*(16629/2000)*"
+>"b-a*b"
+APPREC
+"P  V  N T"
+APPREC
+"LIN. MOTION"
+APPREC
+"X=VT+1/2*AT↑2"
+APPREC
+"c*b+(1/2)*d*b↑2"
+>"-a"
+APPREC
+"X  T  V A"
+APPREC
+"NEWTONS LAW"
+APPREC
+"F=G*M1*M2/R↑2"
+APPREC
+"e*b*c/d↑2-a"
+APPREC
+"F  M1 M2 R G"
+APPREC
+"INTEREST"
+APPREC
+"P=PERIODS"
+APPREC
+"((1+b/100/c)↑c-"
+>"1)*100-a"
+APPREC
+"EFF NOM P"
+APPREC
+"TVM END MODE"
+APPREC
+"6%/YR=.06/12"
+APPREC
+"a+(1+b)*c*((1-("
+APPREC
+"1+b)↑#d)/b)+e*"
+APPCHR
+"(1+b)↑#d"
+APPCHR
+"PV I PM N FV"
+APPREC
+"TVM BEG MODE"
+APPREC
+"6%/YR=.06/12"
+APPREC
+"a+c*((1-(1-b)"
+APPREC
+"↑#d)/b)+e*"
+APPCHR
+"(1+b)↑#d"
+APPCHR
+"PV I PM N FV"
+APPREC
+END

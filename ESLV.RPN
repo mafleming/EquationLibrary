@@ -1,0 +1,17 @@
+LBL "ESLV"                        ;;
+LBL 00                            ;; Faster label lookup?
+XEQ IND 09                        ;; Set variable to guess in X
+SF 09                             ;; Use equation in XM text file
+EVALZ                             ;; Compute result of first guess
+X<>Y                              ;; Get second guess
+XEQ IND 09                        ;; Set variable to guess in X
+EVALT                             ;; Compute result of second guess
+Z=T?                              ;; (EQNLIB ROM), guess converged?
+GTO 06                            ;; Yes
+"Y-Z*(Y-X)/(Z-T)"                 ;; Formula for next guess
+CF 09                             ;; Use equation in Alpha
+EVAL$                             ;; Compute next guess
+FS? 10                            ;; Display intermediate result?
+VIEW X                            ;; Yes
+X<>Y?                             ;; X not equal Y?
+GTO 00                            ;; Not yet converged
