@@ -1,3 +1,17 @@
+;;*****************************************************************************
+;; Equation Library - EQNLIB
+;; Extended Version with Direct XM File Equation Support
+;;
+;; Main entry point EQNLIB opens the default XM file EQNS while the alternate
+;; entry point EQN$ will open the file whose name is in the ALPHA register.
+;;
+;; User keys F & G will move forward and backward through the equations in the
+;; library file. User key H switches between the equation name and the equation
+;; formula or comment. User key J selects an equation to solve.
+;;*****************************************************************************
+import 41cx
+local ESLV
+
 LBL "EQNLIB"                      ;; Equation Library
 "EQNS"                            ;; Default Equation Library Data
 LBL "EQN$"                        ;; User specified library

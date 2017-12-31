@@ -1,7 +1,16 @@
+;;*****************************************************************************
+;; Equation Library - INIEQN
+;; Create and Initialize Default Equation Library File
+;;
+;; Create a set of example equations for review and solving with the Equation
+;; Library program.
+;;*****************************************************************************
+import 41cx
+
 LBL "INIEQN"
-"EQNS"
+"EQNS"                            ;; Default equation file name
 128
-CRFLAS
+CRFLAS                            ;; File must not exist
 "LINEAR"
 APPREC
 "Y=AX+B"

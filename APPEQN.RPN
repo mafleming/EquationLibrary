@@ -1,3 +1,17 @@
+;;*****************************************************************************
+;; Equation Library - APPEQN
+;; Append Equation
+;;
+;; Seeks to the end of the standard Equation Library Extended Memory file EQNS
+;; then resizes the file to hold another equation. Entry point "APP$" is
+;; provided so that an alternate file name can be given in the ALPHA register.
+;;
+;; Edit the four text lines to enter a new equation. The equation name should
+;; not exceed 12 characters so the name will not scroll in the display. The
+;; equation menu should be 12 characters or less in length.
+;;*****************************************************************************
+import 41cx
+
 LBL "APPEQN"                      ;; Search And Replace
 "EQNS"                            ;; Default name of XM file
 LBL "APP$"                        ;; Entry point for filename in ALPHA
