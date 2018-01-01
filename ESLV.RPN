@@ -1,30 +1,29 @@
 ;;*****************************************************************************
 ;; Equation Library - ESLV
-;; External Solver Using Extended XM File Equation
+;; Solve for Variable X in Formula in ALPHA Register
 ;;
-;; Implement a simple solver where the equation is stored directly in an XM
-;; file. The file record pointer should point to the beginning of the equation
-;; when calling this program. Setting flag 09 instructs the Formula Evaluation
-;; module to use the file record pointer instead of the ALPHA register as the
-;; source of the formula to evaluate.
+;; Initial guesses are given in the X and Y register. The formula in ALPHA is
+;; evaluated with each guess and the result placed in the T and Z register.
+;; A new guess value is computed using the first two guesses and their result
+;; until the difference between guesses or results is zero.
 ;;*****************************************************************************
 import 41cx
 
-LBL "ESLV"                        ;;
-LBL 00                            ;; Faster label lookup?
-XEQ IND 09                        ;; Set variable to guess in X
-SF 09                             ;; Use equation in XM text file
-EVALZ                             ;; Compute result of first guess
-X<>Y                              ;; Get second guess
-XEQ IND 09                        ;; Set variable to guess in X
-EVALT                             ;; Compute result of second guess
-Z=T?                              ;; (EQNLIB ROM), guess converged?
-GTO 06                            ;; Yes
-"Y-Z*(Y-X)/(Z-T)"                 ;; Formula for next guess
-CF 09                             ;; Use equation in Alpha
-EVAL$                             ;; Compute next guess
-FS? 10                            ;; Display intermediate result?
+LBL "ESLV"                        ;; Internal solver, same as APP module SV$ function
+STO$                              ;; Save modified equation
+7
+LBL 00
+EVALZ
+X<>Y
+EVALT
+Z=T?                              ;; Has the estimate converged (T==Z?)
+RTN
+"Y-Z*(Y-X)/(Z-T)"                 ;; Compute new guess
+EVAL$
+FS? 10                            ;; Show intermediate result?
 VIEW X                            ;; Yes
-X<>Y?                             ;; X not equal Y?
-GTO 00                            ;; Not yet converged
+RCL$
+7
+X#Y?                              ;; Converged on answer?
+GTO 00                            ;; No
 END

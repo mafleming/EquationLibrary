@@ -1,0 +1,28 @@
+;;*****************************************************************************
+;; Equation Library - CH2X
+;; Replace characters in ALPHA matching code in X register with 'X'
+;;
+;; This replaces a formula variable 'a' through 'e' with X for the solver.
+;;*****************************************************************************
+import 41cx
+
+LBL "CH2X"                        ;; Replace character in Alpha string with "X"
+ENTER^                            ;; Duplicate search character
+POSA                              ;; Position of character in X register in Alpha string
+X<0?                              ;; Not found?
+GTO 00                            ;; Yes, exit
+AROT                              ;; Bring character to start of Alpha
+ATOX                              ;; Remove character
+CLX                               ;; No stack lift
+88                                ;; Character "X"
+XTOA                              ;; Append to Alpha string
+RDN                               ;; Drop "X", get position
+-1
+X<>Y
+-
+AROT                              ;; Rotate back to original string with replacement
+RDN                               ;; Drop number, bring Search character back to X
+GTO "CH2X"
+LBL 00
+RDN                               ;; Return with search character still in X
+END

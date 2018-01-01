@@ -1,0 +1,30 @@
+;;*****************************************************************************
+;; Equation Library - ESLV
+;; External Solver Using Extended XM File Equation
+;;
+;; Implement a simple solver where the equation is stored directly in an XM
+;; file. The file record pointer should point to the beginning of the equation
+;; when calling this program. Setting flag 09 instructs the Formula Evaluation
+;; module to use the file record pointer instead of the ALPHA register as the
+;; source of the formula to evaluate.
+;;*****************************************************************************
+import 41cx
+
+LBL "ESLV"                        ;;
+LBL 00                            ;; Faster label lookup?
+XEQ IND 09                        ;; Set variable to guess in X
+SF 09                             ;; Use equation in XM text file
+EVALZ                             ;; Compute result of first guess
+X<>Y                              ;; Get second guess
+XEQ IND 09                        ;; Set variable to guess in X
+EVALT                             ;; Compute result of second guess
+Z=T?                              ;; (EQNLIB ROM), guess converged?
+GTO 06                            ;; Yes
+"Y-Z*(Y-X)/(Z-T)"                 ;; Formula for next guess
+CF 09                             ;; Use equation in Alpha
+EVAL$                             ;; Compute next guess
+FS? 10                            ;; Display intermediate result?
+VIEW X                            ;; Yes
+X<>Y?                             ;; X not equal Y?
+GTO 00                            ;; Not yet converged
+END

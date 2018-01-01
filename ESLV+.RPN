@@ -1,0 +1,42 @@
+;;*****************************************************************************
+;; Equation Library - ESLV+
+;; Solve for Variable X in Formula in ALPHA Registers 07 and 11
+;;
+;; In default solver, the formula is in the ALPHA register. In this solver,
+;; the formula is spread across ALPHA registers 07-10, and 11-14. The first
+;; formula half is evaluated to T and the second formula must reference the
+;; T register for its intermediate value.
+;;
+;; Initial guesses are given in the X and Y register. The formula is
+;; evaluated with each guess and the result placed in the T and Z register.
+;; A new guess value is computed using the first two guesses and their result
+;; until the difference between guesses or results is zero.
+;;*****************************************************************************
+import 41cx
+
+LBL "ESLV+"                       ;; Extended solver
+RCL$                              ;; First partial formula
+7
+EVALT                             ;; Result in T
+RCL$                              ;; Second partial formula
+11
+EVALT                             ;; Final result in T
+R^
+STO T
+RDN                               ;; Final result now in Z
+X<>Y
+RCL$                              ;; First partial formula
+7
+EVALT                             ;; Result in T
+RCL$                              ;; Second partial formula
+11
+EVALT                             ;; Final result in T
+Z=T?                              ;; Has the estimate converged (T==Z?)
+RTN
+"Y-Z*(Y-X)/(Z-T)"
+EVAL$
+FS? 10
+VIEW X
+X#Y?
+GTO "ESLV+"
+END
