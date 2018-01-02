@@ -12,7 +12,7 @@
 ;; A new guess value is computed using the first two guesses and their result
 ;; until the difference between guesses or results is zero.
 ;;*****************************************************************************
-import 41cx
+import 41cx, eval_1f
 
 LBL "ESLV+"                       ;; Extended solver
 RCL$                              ;; First partial formula

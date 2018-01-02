@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModFile FileFormat="MOD1" Title="HelloWorld" Version="A" PartNumber="" Author="Håkan Thörngren" Copyright="Håkan Thörngren" License="GNU Public License version 3" Comments="" Category="2" Hardware="0">
+  <Page Name="Page4K" Identity="HW1A" Page="Any" PageGroup="0" Bank="1" BankGroup="0" RAM="0" WriteProtect="0" FAT="1"/>
+</ModFile>
+
