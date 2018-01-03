@@ -9,6 +9,7 @@
 ;; source of the formula to evaluate.
 ;;*****************************************************************************
 import 41cx, eval_1f
+local Z=T?
 
 LBL "ESLV"                        ;;
 LBL 00                            ;; Faster label lookup?

@@ -10,7 +10,7 @@
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
 import 41cx, eval_1f
-local ESLV, ESLV+
+local CH2X, ESLV, ESLV+
 
 LBL "EQNLIB"                      ;; Equation Library
 "EQNS"                            ;; Default Equation Library Data
@@ -160,7 +160,7 @@ LET=                              ;; Save result back to variable
 RTN
 
 LBL 10                            ;; Solve for unknown variable, letter in X register
-1E-99                             ;; Default solver guesses
+1 E-99                            ;; Default solver guesses
 STO 02
 1
 STO 01

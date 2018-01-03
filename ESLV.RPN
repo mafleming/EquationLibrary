@@ -8,6 +8,7 @@
 ;; until the difference between guesses or results is zero.
 ;;*****************************************************************************
 import 41cx, eval_1f
+local Z=T?
 
 LBL "ESLV"                        ;; Internal solver, same as APP module SV$ function
 STO$                              ;; Save modified equation

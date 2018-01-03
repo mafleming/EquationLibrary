@@ -21,3 +21,6 @@ Thumbs.db
 *.dll
 *.lib
 *.sbr
+# Ingnore files created by NutStudio
+*.o
+*.lst

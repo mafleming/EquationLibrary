@@ -13,6 +13,7 @@
 ;; until the difference between guesses or results is zero.
 ;;*****************************************************************************
 import 41cx, eval_1f
+local Z=T?
 
 LBL "ESLV+"                       ;; Extended solver
 RCL$                              ;; First partial formula

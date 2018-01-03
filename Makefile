@@ -12,10 +12,10 @@ clean:
 	-rm -f ${OBJS} *.lst $(MOD)
 
 %.o: %.rpn
-	rpncomp -I../module-descriptor $<
+	rpncomp -I/usr/local/include/module-descriptor $<
 
 %.o: %.raw
-	rpncomp -I../module-descriptor $<
+	rpncomp -I/usr/local/include/module-descriptor $<
 
 %.o: %.s
 	nutasm $<
