@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ModFile FileFormat="MOD1" Title="HelloWorld" Version="A" PartNumber="" Author="Håkan Thörngren" Copyright="Håkan Thörngren" License="GNU Public License version 3" Comments="" Category="2" Hardware="0">
-  <Page Name="Page4K" Identity="HW1A" Page="Any" PageGroup="0" Bank="1" BankGroup="0" RAM="0" WriteProtect="0" FAT="1"/>
+<ModFile FileFormat="MOD1" Title="Equation Library" Version="B" PartNumber="" Author="Mark A Fleming" Copyright="Mark A Fleming" License="GNU Public License version 3" Comments="Use Formula Evaluation ROM 1F or higher" Category="2" Hardware="0" >
+  <Page Name="Page4K" Identity="EQ1B" Page="Any" PageGroup="0" Bank="1" BankGroup="0" RAM="0" WriteProtect="0" FAT="1"/>
 </ModFile>
 

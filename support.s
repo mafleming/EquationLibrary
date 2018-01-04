@@ -11,7 +11,7 @@
               
               public    `FAT entry: Z=T?`
 
-              include "mainframe.i"
+              include "entry.i"
               
               section   Code
               

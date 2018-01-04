@@ -13,7 +13,7 @@ fatstart:     fat   header
 ;;; End marker for function address table
 fatend:       con   0,0
 
-              include "mainframe.i"
+              include "entry.i"
 
               section Code
 ;;; Make an empty name function for the module to show up in CAT 2
