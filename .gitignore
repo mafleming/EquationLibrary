@@ -24,3 +24,5 @@ Thumbs.db
 # Ingnore files created by NutStudio
 *.o
 *.lst
+# Emacs backups
+*.*~

@@ -12,16 +12,15 @@ clean:
 	-rm -f ${OBJS} *.lst $(MOD)
 
 %.o: %.rpn
-	rpncomp -I/usr/local/include/module-descriptor $<
+	rpncomp -I/usr/local/include/module-export $<
 
 %.o: %.raw
-	rpncomp -I/usr/local/include/module-descriptor $<
+	rpncomp -I/usr/local/include/module-export $<
 
 %.o: %.s
-	nutasm $<
+	asnut -I/usr/local/include $<
 
-$(MOD): $(OBJS) Plugin4K.rules eqnlib.ModDesc Makefile
-	nutlink $(ARGS) --rules=Plugin4K.rules --modfile-description=eqnlib.ModDesc \
-		-o $(MOD)
+$(MOD): $(OBJS) plugin4k.scm eqnlib.moddesc Makefile
+	lnnut $(ARGS) plugin4k.scm eqnlib.moddesc -o $(MOD)
 
 

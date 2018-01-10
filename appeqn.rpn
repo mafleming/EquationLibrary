@@ -10,7 +10,7 @@
 ;; not exceed 12 characters so the name will not scroll in the display. The
 ;; equation menu should be 12 characters or less in length.
 ;;*****************************************************************************
-import 41cx
+.import 41cx
 
 LBL "APPEQN"                      ;; Search And Replace
 "EQNS"                            ;; Default name of XM file

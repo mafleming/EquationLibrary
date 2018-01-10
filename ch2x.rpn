@@ -4,7 +4,7 @@
 ;;
 ;; This replaces a formula variable 'a' through 'e' with X for the solver.
 ;;*****************************************************************************
-import 41cx
+.import 41cx
 
 LBL "CH2X"                        ;; Replace character in Alpha string with "X"
 ENTER^                            ;; Duplicate search character

@@ -9,7 +9,7 @@
 ;; library file. User key H switches between the equation name and the equation
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
-import 41cx, osx3
+.import 41cx, osx3
 
 LBL "SAR"                         ;; Search And Replace
 "FNAME?"                          ;; Name of XM file

@@ -9,8 +9,8 @@
 ;; library file. User key H switches between the equation name and the equation
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
-import 41cx, eval_1f
-local CH2X, ESLV, ESLV+
+.import 41cx, eval_1f
+.local CH2X, ESLV, ESLV+
 
 LBL "EQNLIB"                      ;; Equation Library
 "EQNS"                            ;; Default Equation Library Data
@@ -22,7 +22,7 @@ GETREC                            ;; Get equation name
 AVIEW                             ;; and display it
 RTN
 
-LBL "F"                           ;; Advance to next equation
+LBL F                             ;; Advance to next equation
 RCL 03
 4                                 ;; Records per equation
 +
@@ -36,7 +36,7 @@ LBL 00
 AVIEW                             ;; and display it
 RTN
 
-LBL "G"                           ;; Go back to previous equation
+LBL G                             ;; Go back to previous equation
 RCL 03
 4
 -
@@ -49,7 +49,7 @@ LBL 00
 AVIEW                             ;; and display it
 RTN
 
-LBL "H"                           ;; Switch between equation name & formula views
+LBL H                             ;; Switch between equation name & formula views
 RCL 03                            ;; Record pointer
 4                                 ;; Record size
 MOD
@@ -68,11 +68,11 @@ GETREC                            ;; Retrieve record
 AVIEW                             ;; and display it
 RTN
 
-LBL "I"                           ;; Refresh view
+LBL I                             ;; Refresh view
 AVIEW
 RTN
 
-LBL "J"                           ;; Select equation and solve
+LBL J                             ;; Select equation and solve
 RCL 03
 RCL 03
 4
@@ -94,12 +94,12 @@ GETREC
 AVIEW
 RTN
 
-LBL "A"                           ;; First variable
+LBL A                             ;; First variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
 1                                 ;; "a"
-GTO "J"                           ;; Redisplay menu
+GTO J                             ;; Redisplay menu
 LBL 00
 97                                ;; "a"
 XEQ 10                            ;; Replace character and invoke solver
@@ -107,12 +107,12 @@ LET=                              ;; Save result back to variable
 1                                 ;; "a"
 RTN
 
-LBL "B"                           ;; Second variable
+LBL B                           ;; Second variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
 2                                 ;; "b"
-GTO "J"                           ;; Redisplay menu
+GTO J                             ;; Redisplay menu
 LBL 00
 98                                ;; "b"
 XEQ 10                            ;; Replace character and invoke solver
@@ -120,12 +120,12 @@ LET=                              ;; Save result back to variable
 2                                 ;; "b"
 RTN
 
-LBL "C"                           ;; Third variable
+LBL C                             ;; Third variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
 3                                 ;; "c"
-GTO "J"                           ;; Redisplay menu
+GTO J                             ;; Redisplay menu
 LBL 00
 99                                ;; "c"
 XEQ 10                            ;; Replace character and invoke solver
@@ -133,12 +133,12 @@ LET=                              ;; Save result back to variable
 3                                 ;; "c"
 RTN
 
-LBL "D"                           ;; Forth variable
+LBL D                             ;; Forth variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
 4                                 ;; "d"
-GTO "J"                           ;; Redisplay menu
+GTO J                             ;; Redisplay menu
 LBL 00
 100                               ;; "d"
 XEQ 10                            ;; Replace character and invoke solver
@@ -146,12 +146,12 @@ LET=                              ;; Save result back to variable
 4
 RTN
 
-LBL "E"                           ;; Fifth variable
+LBL E                             ;; Fifth variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
 5                                 ;; "e"
-GTO "J"                           ;; Redisplay menu
+GTO J                             ;; Redisplay menu
 LBL 00
 101                               ;; "e"
 XEQ 10                            ;; Replace character and invoke solver
@@ -198,35 +198,35 @@ LBL 08
 XEQ "ESLV"                        ;; Internal solver, regular equation library
 RTN
 
-LBL "a"
+LBL a
 97                                ;; "a"
 XEQ 12                            ;; Save guesses and replace character
 LET=                              ;; Save result back to variable
 1                                 ;; "a"
 RTN
 
-LBL "b"
+LBL b
 98                                ;; "b"
 XEQ 12                            ;; Save guesses and replace character
 LET=                              ;; Save result back to variable
 2                                 ;; "b"
 RTN
 
-LBL "c"
+LBL c
 99                                ;; "c"
 XEQ 12                            ;; Save guesses and replace character
 LET=                              ;; Save result back to variable
 3                                 ;; "c"
 RTN
 
-LBL "d"
+LBL d
 100                               ;; "d"
 XEQ 12                            ;; Save guesses and replace character
 LET=                              ;; Save result back to variable
 4                                 ;; "d"
 RTN
 
-LBL "e"
+LBL e
 101                               ;; "e"
 XEQ 12                            ;; Save guesses and replace character
 LET=                              ;; Save result back to variable
