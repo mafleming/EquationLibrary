@@ -11,7 +11,7 @@
               
               .public    `FAT entry: Z=T?`
 
-#include "entry.i"
+#include "mainframe.h"
               .section  Code
               
               .name     "Z=T?"
