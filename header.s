@@ -14,6 +14,8 @@
               .con     17                      ; XROM number
               .con     .fatsize fatend
 fatstart:     .fat     header
+
+              .section FAT
               .fatrpn  EQNLIB
               .fatrpn  `EQN$`
 `FAT entry: CH2X`:

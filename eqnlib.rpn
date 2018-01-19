@@ -10,7 +10,7 @@
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
 .import 41cx, eval_1f
-.local CH2X, ESLV, ESLV+
+;;.local CH2X, ESLV, ESLV+
 
 LBL "EQNLIB"                      ;; Equation Library
 "EQNS"                            ;; Default Equation Library Data
