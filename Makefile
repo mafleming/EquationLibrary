@@ -12,15 +12,15 @@ clean:
 	-rm -f ${OBJS} *.lst $(MOD)
 
 %.o: %.rpn
-	rpncomp -l --no-fat ${XEQLST} $<
+	rpncomp --no-fat ${XEQLST} $<
 
 %.o: %.raw
 	rpncomp $<
 
 %.o: %.s
-	asnut -l $<
+	asnut $<
 
-$(MOD): $(OBJS) plugin4k.scm eqnlib.moddesc Makefile
-	lnnut -leqnmod.lst $(OBJS) plugin4k.scm eqnlib.moddesc -o $(MOD)
+$(MOD): $(OBJS) eqnlib.scm eqnlib.moddesc Makefile
+	lnnut -leqnmod.lst $(OBJS) eqnlib.scm eqnlib.moddesc -o $(MOD)
 
 

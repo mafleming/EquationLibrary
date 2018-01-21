@@ -36,7 +36,7 @@ fatend:       .con     0,0
 
               .section Code
 ;;; Make an empty name function for the module to show up in CAT 2
-              .name  "EQNLIB 1B"        ; The name of the module
+              .name  "-EQNLIB 1B"        ; The name of the module
 header:       rtn
 
               .section PollVectors
