@@ -9,7 +9,7 @@
 ;; library file. User key H switches between the equation name and the equation
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
-.import 41cx, eval_1f
+.import 41cx, eval
 ;;.local CH2X, ESLV, ESLV+
 
 LBL "EQNLIB"                      ;; Equation Library

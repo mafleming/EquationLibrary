@@ -7,7 +7,7 @@
 ;; A new guess value is computed using the first two guesses and their result
 ;; until the difference between guesses or results is zero.
 ;;*****************************************************************************
-.import 41cx, eval_1f
+.import 41cx, eval
 .local Z=T?
 
 LBL "ESLV"                        ;; Internal solver, same as APP module SV$ function

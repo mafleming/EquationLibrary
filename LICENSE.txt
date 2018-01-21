@@ -1,4 +1,4 @@
-Copyright 2017, Mark Fleming.
+Copyright (c) 2017, Mark A. Fleming.
 All Rights Reserved.
 
 Redistribution and use in source and binary forms, with or without
