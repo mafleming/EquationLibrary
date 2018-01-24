@@ -10,7 +10,6 @@
 ;; formula or comment. User key J selects an equation to solve.
 ;;*****************************************************************************
 .import 41cx, eval
-;;.local CH2X, ESLV, ESLV+
 
 LBL "EQNLIB"                      ;; Equation Library
 "EQNS"                            ;; Default Equation Library Data
@@ -107,7 +106,7 @@ LET=                              ;; Save result back to variable
 1                                 ;; "a"
 RTN
 
-LBL B                           ;; Second variable
+LBL B                             ;; Second variable
 FC?C 22                           ;; Was a number entered?
 GTO 00                            ;; No, solve for variable
 LET=                              ;; Set variable
