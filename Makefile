@@ -26,7 +26,7 @@ clean:
 	asnut $<
 
 $(MOD): $(OBJS) eqnlib.scm eqnlib.moddesc Makefile
-	lnnut -leqnmod.lst $(OBJS) eqnlib.scm eqnlib.moddesc -o $(MOD)
+	lnnut --list-file eqnmod.lst $(OBJS) eqnlib.scm eqnlib.moddesc -o $(MOD)
 
 $(ROM):	$(MOD)
 	modtool --extract-rom-pages $(MOD)
